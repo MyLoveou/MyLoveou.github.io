@@ -1,0 +1,731 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="无人知我意">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="贪心算法  什么是贪心算法？  在对问题求解时，总是做出在当前看来是最好的选择，就是贪心。不从整体上最优加以考虑，所做出的仅是在某种意义上的局部最优。 贪心算法不是对所有问题都能得到整体最优解，但对范围相当广泛的许多问题，它能产生&#x3D;&#x3D;整体最优解或者是整体最优解的近似解&#x3D;&#x3D;。 特点：多步判断、最优子结构性质、贪心选择性质  最优化问题  每个最优化问题包含一组限制条件和一个优化函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机算法-4">
+<meta property="og:url" content="http://example.com/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/index.html">
+<meta property="og:site_name" content="我的世界">
+<meta property="og:description" content="贪心算法  什么是贪心算法？  在对问题求解时，总是做出在当前看来是最好的选择，就是贪心。不从整体上最优加以考虑，所做出的仅是在某种意义上的局部最优。 贪心算法不是对所有问题都能得到整体最优解，但对范围相当广泛的许多问题，它能产生&#x3D;&#x3D;整体最优解或者是整体最优解的近似解&#x3D;&#x3D;。 特点：多步判断、最优子结构性质、贪心选择性质  最优化问题  每个最优化问题包含一组限制条件和一个优化函">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/image-20250105205422424.png">
+<meta property="og:image" content="http://example.com/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/image-20250105212412323.png">
+<meta property="article:published_time" content="2025-01-04T13:19:21.000Z">
+<meta property="article:modified_time" content="2025-01-05T14:01:28.352Z">
+<meta property="article:author" content="无人知我意">
+<meta property="article:tag" content="贪心算法">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/image-20250105205422424.png">
+  
+  
+  
+  <title>计算机算法-4 - 我的世界</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>我的世界</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="计算机算法-4"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-04 21:19" pubdate>
+          2025年1月4日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">计算机算法-4</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="贪心算法">贪心算法</h1>
+<ul>
+<li><p>什么是贪心算法？</p>
+<ul>
+<li>在对问题求解时，总是做出在当前看来是最好的选择，就是贪心。不从整体上最优加以考虑，所做出的仅是在某种意义上的局部最优。</li>
+<li>贪心算法不是对所有问题都能得到整体最优解，但对范围相当广泛的许多问题，它能产生==整体最优解或者是整体最优解的近似解==。</li>
+<li>特点：多步判断、最优子结构性质、贪心选择性质</li>
+</ul></li>
+<li><p>最优化问题</p>
+<ul>
+<li>每个最优化问题包含一组限制条件和一个优化函数
+<ul>
+<li>可行解：符合限制条件的问题求解方案</li>
+<li>最优解：使优化函数取得最佳解的可行解</li>
+</ul></li>
+</ul></li>
+<li><p>动态规划 VS 贪心算法</p>
+<ul>
+<li><p>共同点：都要求问题具有最优子结构性质</p></li>
+<li><p>动态规划：自底向上，求解出很多子问题，然后再做出选择</p></li>
+<li><p>贪心算法：自顶向下，第一步为贪心选择，将原问题变成一个相似的、但规模更小的问题，而后每一步都是当前看似最佳的选择。从求解的全过程来看，每一次贪心选择都将当前问题归纳为更小的相似子问题，而每一次选择都仅做一次，无重复回溯过程，具有较高的时间效率。</p>
+<p><img src="/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/image-20250105205422424.png" srcset="/img/loading.gif" lazyload alt="image-20250105205422424" style="zoom:50%;"></p></li>
+</ul></li>
+</ul>
+<h2 id="范例">1、范例</h2>
+<h3 id="最短路径">1、最短路径</h3>
+<ul>
+<li>描述：寻找初始点到达目标点的最短路径</li>
+<li>思考：每一步在路径中添加一个顶点，假设当前路径中已到达顶点P，且顶点P并不是目标顶点，则选择离P最近且目前不在路径中的点</li>
+</ul>
+<h3 id="渴婴问题">2、渴婴问题</h3>
+<ul>
+<li>描述：婴儿可得到n种不同的饮料。根据以前关于这n种饮料的不同体验，此婴儿知道这其中某些饮料更合自己的胃口，因此，婴儿采取如下方法为每一种饮料赋予一个满意度值：饮用1盎司第i种饮料，对它作出相对评价，将一个数值<span class="math inline">\(s_i\)</span>作为满意度赋予第i种饮料。这个婴儿都会尽量饮用具有最大满意度值的饮料来最大限度地满足她解渴地需要，但是不幸地是：具有最大满意度值地饮料有时并没有足够地量来满足此婴儿解渴地需要。设<span class="math inline">\(a_i\)</span>是第i种饮料地总量，而此婴儿需要t盎司的饮料来解渴，那么，需要饮用n种不同的饮料各多少量才能满足婴儿解渴的需求。</li>
+<li>思考：只考虑局部最优，选择后不能进行更改。因此将饮料的满意度按照从大到小进行排序，按顺序喝即可</li>
+</ul>
+<h3 id="装载问题">3、装载问题</h3>
+<ul>
+<li>描述：有一艘大船准备用来装载货物。所有待装货物都装在货箱中且所有货箱的大小都一样，但货箱的重量都各不相同。设第i个货箱的重量为<span class="math inline">\(w_i\)</span>（1≤i≤n），而货箱的最大载重量为c，目的：在货船上更多的货物。</li>
+<li>思考：将货物按照从小到大进行排序，按顺序载入船中</li>
+</ul>
+<h2 id="活动安排问题">2、活动安排问题</h2>
+<ul>
+<li>描述：在所给的活动集合中选出一个最大相容的活动子集合。}设有n个活动的集合E={1,2,…,n}，其中每个活动都要求使用同一资源（如一个阶梯教室等），而在同一时间内只有一个活动能使用这一资源。每个活动i都有一个要求使用该资源的起始时间<span class="math inline">\(s_i\)</span>和一个结束时间<span class="math inline">\(f_i\)</span>，且<span class="math inline">\(0&lt;=s_i&lt;f_i&lt;0\)</span>。如果选择了活动i，则它在半开时间区间<span class="math inline">\([s_i, f_i)\)</span>内占用资源;若区间<span class="math inline">\([s_i, f_i)\)</span>与区间<span class="math inline">\([s_j,
+f_j)\)</span>不相交，则称活动i与活动j是相容的。也就是说，当<span class="math inline">\(s_i≥f_j\)</span>或<span class="math inline">\(s_j≥f_i\)</span>时，活动i与活动j相容。</li>
+<li>思考：对于这个问题来说，当一个活动结束时间越早，对后面的活动来说越好。当选择第一个活动时，选择结束时间最早的活动，这样对于后面的活动来说更好进行选择；在选择第二个活动时，同样选择当前结束时间最早的活动。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">activity_selection</span>(<span class="hljs-params">activities</span>):<br>    <span class="hljs-comment"># 按活动结束时间排序</span><br>    activities.sort(key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">1</span>])<br>    <span class="hljs-comment"># 选择第一个活动</span><br>    selected_activities = [activities[<span class="hljs-number">0</span>]]<br>    last_end_time = activities[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]<br>    <span class="hljs-comment"># 遍历剩余的活动</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-built_in">len</span>(activities)):<br>        <span class="hljs-keyword">if</span> activities[i][<span class="hljs-number">0</span>] &gt;= last_end_time:<br>            selected_activities.append(activities[i])<br>            last_end_time = activities[i][<span class="hljs-number">1</span>]<br>    <span class="hljs-keyword">return</span> selected_activities<br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    <span class="hljs-comment"># 活动列表，每个活动用 (开始时间, 结束时间) 表示</span><br>    activities = [(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">5</span>), (<span class="hljs-number">0</span>, <span class="hljs-number">6</span>), (<span class="hljs-number">5</span>, <span class="hljs-number">7</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">8</span>), (<span class="hljs-number">5</span>, <span class="hljs-number">9</span>), (<span class="hljs-number">6</span>, <span class="hljs-number">10</span>), (<span class="hljs-number">8</span>, <span class="hljs-number">11</span>), (<span class="hljs-number">8</span>, <span class="hljs-number">12</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">13</span>), (<span class="hljs-number">12</span>, <span class="hljs-number">14</span>)]<br>    selected_activities = activity_selection(activities)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;选择的活动:&quot;</span>, selected_activities)<br></code></pre></td></tr></table></figure>
+<h2 id="背包问题组合优化问题">3、背包问题：组合优化问题</h2>
+<ul>
+<li>描述：有一个贼在偷窃一家商店时发现有N件物品；第i件物品值<span class="math inline">\(p_i\)</span>元，重<span class="math inline">\(w_i\)</span>磅（1≤i≤N），且都是整数。他希望带走的东西越值钱越好，但他的背包中最多能装下M磅的东西（整数）。</li>
+</ul>
+<p><img src="/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/image-20250105212412323.png" srcset="/img/loading.gif" lazyload alt="image-20250105212412323" style="zoom:50%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fractional_knapsack</span>(<span class="hljs-params">capacity, weights, values</span>):<br>    <span class="hljs-comment"># 计算每个物品的单位重量价值</span><br>    item_values = [(values[i] / weights[i], weights[i], values[i]) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(weights))]<br>    <span class="hljs-comment"># 按单位重量价值从高到低排序</span><br>    item_values.sort(key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">0</span>], reverse=<span class="hljs-literal">True</span>)<br>    total_value = <span class="hljs-number">0.0</span><br>    <span class="hljs-keyword">for</span> value_per_weight, weight, value <span class="hljs-keyword">in</span> item_values:<br>        <span class="hljs-keyword">if</span> capacity &gt;= weight:<br>            <span class="hljs-comment"># 如果背包容量大于等于物品重量，全部装入</span><br>            capacity -= weight<br>            total_value += value<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-comment"># 否则，装入部分物品</span><br>            total_value += value_per_weight * capacity<br>            <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">return</span> total_value<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="print-no-link">#贪心算法</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算机算法-4</div>
+      <div>http://example.com/2025/01/04/算法/计算机算法-4/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>无人知我意</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/01/07/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-5/" title="计算机算法-5">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机算法-5</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/29/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-3/" title="计算机算法-3">
+                        <span class="hidden-mobile">计算机算法-3</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="无人知我意">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="动态规划  基本思想：将待求解问题分解成若干子问题，先求解子问题，再结合这些子问题的解得到原问题的解，这一点与分治思想类似。但是，使用动态规划算法求解的问题经过分解得到的子问题&#x3D;&#x3D;往往不是相互独立的&#x3D;&#x3D;.也就是子问题求解时存在重叠。动态规划是一个用来解决&#x3D;&#x3D;多段决策过程最优&#x3D;&#x3D;的通用方法。&#x3D;&#x3D;在动态规划算法，多阶段决策过程，每步求解的问题都是后面阶段求解问题的子问题，每部决策将依赖于以前步骤的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机算法-3">
+<meta property="og:url" content="http://example.com/2024/12/29/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-3/index.html">
+<meta property="og:site_name" content="我的世界">
+<meta property="og:description" content="动态规划  基本思想：将待求解问题分解成若干子问题，先求解子问题，再结合这些子问题的解得到原问题的解，这一点与分治思想类似。但是，使用动态规划算法求解的问题经过分解得到的子问题&#x3D;&#x3D;往往不是相互独立的&#x3D;&#x3D;.也就是子问题求解时存在重叠。动态规划是一个用来解决&#x3D;&#x3D;多段决策过程最优&#x3D;&#x3D;的通用方法。&#x3D;&#x3D;在动态规划算法，多阶段决策过程，每步求解的问题都是后面阶段求解问题的子问题，每部决策将依赖于以前步骤的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-29T10:35:38.000Z">
+<meta property="article:modified_time" content="2025-01-04T13:17:22.506Z">
+<meta property="article:author" content="无人知我意">
+<meta property="article:tag" content="动态规划">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>计算机算法-3 - 我的世界</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>我的世界</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="计算机算法-3"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-29 18:35" pubdate>
+          2024年12月29日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">计算机算法-3</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="动态规划">动态规划</h1>
+<blockquote>
+<p>基本思想：将待求解问题分解成若干子问题，先求解子问题，再结合这些子问题的解得到原问题的解，这一点与分治思想类似。但是，使用动态规划算法求解的问题经过分解得到的子问题==往往不是相互独立的==.也就是子问题求解时存在重叠。动态规划是一个用来解决==多段决策过程最优==的通用方法。==在动态规划算法，多阶段决策过程，每步求解的问题都是后面阶段求解问题的子问题，每部决策将依赖于以前步骤的决策==。</p>
+<p>在分治法中，会造成分解得到的子问题过多，导致解决原问题要耗费的时间非常多，而且
+相同的子问题会被==重复多次计算==。如果能够保存已求得的解，就可以避免重复的大量计算。因此可以使用一个表进行记录已解决的问题答案，这是动态规划的基本思想。同时使用动态规划的问题应具有最优子结构性质（==即最优解包含子问题的最优解==）</p>
+<p>如：在计算斐波那契数列时，<span class="math inline">\(fib(5)=fib(4)+fib(3)=(fib(3)+fib(2))+(fib(2)+fib(1))\)</span>多次计算<span class="math inline">\(fib(2)\)</span></p>
+<p>当前问题满足优化原则时，使用动态规划来设计算法。所谓优化原则，就是一个最优决策序列的任何子序列本身一定是相对于子序列的初始和结束状态的最优的决策序列。</p>
+</blockquote>
+<p>通俗来说，动态规划的优化原则可以概括为以下几点：</p>
+<ol type="1">
+<li><p><strong>分而治之</strong>：将一个复杂的问题分解成一系列更小的子问题，这些子问题通常被称为“状态”。每个状态对应于问题的一个特定阶段或部分。</p></li>
+<li><p><strong>最优子结构</strong>：一个问题的最优解包含其子问题的最优解。这意味着，如果你能解决子问题，就能通过某种方式组合这些子问题的解来解决整个问题。</p></li>
+<li><p><strong>重叠子问题</strong>：在递归解决子问题的过程中，相同的子问题会被多次求解。动态规划通过存储这些子问题的解（通常是在表格或数组中），避免重复计算，从而提高效率。</p></li>
+<li><p><strong>记忆化</strong>：在递归过程中，每当解决一个子问题，就将其结果存储起来（这个过程称为“记忆化”）。当再次遇到相同的子问题时，直接使用存储的结果，而不是重新计算。</p></li>
+<li><p><strong>自底向上</strong>：动态规划通常采用自底向上的方法，即从最简单的子问题开始解决，逐步构建到复杂问题的解。这与分治法的自顶向下的方法不同。</p></li>
+<li><p><strong>状态转移方程</strong>：动态规划问题通常有一个或多个状态转移方程，这些方程定义了如何从一个或多个状态的解构建出新状态的解。</p></li>
+<li><p><strong>边界条件</strong>：在动态规划中，需要明确定义问题的边界条件，即最简单的子问题的解。这些边界条件是构建整个问题解的基础。</p></li>
+</ol>
+<p>动态规划算法适用于解最优化问题，步骤设计：</p>
+<ul>
+<li>找出最优解的性质，并刻画其结构特征</li>
+<li>递归地定义最优值</li>
+<li>以自底向上的方式计算最优值，记录构造最优解所必需的信息</li>
+<li>根据计算最优值得到的结构，构造最优解</li>
+</ul>
+<h2 id="范例斐波那契数列">1、范例：斐波那契数列</h2>
+<p>斐波那契数列是一个经典的动态规划问题。斐波那契数列的定义是：F(0) = 0,
+F(1) = 1, 且对于n &gt; 1, F(n) = F(n-1) + F(n-2)。</p>
+<ol type="1">
+<li>识别问题的结构</li>
+</ol>
+<p>斐波那契数列具有重叠子问题和最优子结构的特性。计算F(n)需要知道F(n-1)和F(n-2)，而计算F(n-1)又需要知道F(n-2)和F(n-3)，以此类推。</p>
+<ol start="2" type="1">
+<li>定义状态</li>
+</ol>
+<p>定义状态F(n)为斐波那契数列的第n项。</p>
+<ol start="3" type="1">
+<li>确定状态转移方程</li>
+</ol>
+<p>状态转移方程为：F(n) = F(n-1) + F(n-2)。</p>
+<ol start="4" type="1">
+<li>确定边界条件</li>
+</ol>
+<p>边界条件为：F(0) = 0, F(1) = 1。</p>
+<ol start="5" type="1">
+<li>选择计算顺序</li>
+</ol>
+<p>我们可以选择自底向上的迭代方法来计算斐波那契数列。</p>
+<ol start="6" type="1">
+<li>实现算法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fibonacci</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    <span class="hljs-keyword">elif</span> n == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        dp = [<span class="hljs-number">0</span>] * (n+<span class="hljs-number">1</span>)<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span><br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, n+<span class="hljs-number">1</span>):<br>            dp[i] = dp[i-<span class="hljs-number">1</span>] + dp[i-<span class="hljs-number">2</span>]<br>        <span class="hljs-keyword">return</span> dp[n]<br></code></pre></td></tr></table></figure>
+<ol start="7" type="1">
+<li>提取最终解</li>
+</ol>
+<p>最终解是<span class="math inline">\(dp[n]\)</span>，即斐波那契数列的第n项。</p>
+<h2 id="矩阵链乘法">2、矩阵链乘法</h2>
+<ul>
+<li>描述：给定n个矩阵的链&lt;<span class="math inline">\(A_1\)</span>,<span class="math inline">\(A_2\)</span>,……，<span class="math inline">\(A_n\)</span>&gt;，其中<span class="math inline">\(A_i\)</span>与<span class="math inline">\(A_{i+1}\)</span>是是可乘的，矩阵<span class="math inline">\(A_i\)</span>的维数为1<span class="math inline">\(P_i \times
+P_i\)</span>，如何确定计算矩阵的乘积的计算次序（完全括号化方式），使得依次次序计算矩阵链的乘积需要的次数最少</li>
+<li>思考：设<span class="math inline">\(A[i:j]\)</span>表示<span class="math inline">\(A_i\)</span>到<span class="math inline">\(A_j\)</span>的连续矩阵相乘的计算量，如果计算<span class="math inline">\(A[i:j]\)</span>的最优计算量，可以将这个计算次序在<span class="math inline">\(A[k]\)</span>与<span class="math inline">\(A[k+1]\)</span>之间进行断开，<span class="math inline">\(A[i:j]\)</span>的计算量可以表示为<span class="math inline">\(A[i:k]\)</span>的计算量加上<span class="math inline">\(A[k+1:j]\)</span>的计算量，再加上<span class="math inline">\(A[i:k]\)</span>与<span class="math inline">\(A[k+1:j]\)</span>相乘的计算量。</li>
+</ul>
+<ol type="1">
+<li><p><strong>定义问题</strong>：设<span class="math inline">\(A_i\)</span>的维度为<span class="math inline">\(p_{i-1} \times
+p_i\)</span>，我们需要找到一个完全括号化的方式，使得计算<span class="math inline">\(A_1A_2...A_n\)</span>的乘法次数最少。</p></li>
+<li><p><strong>状态定义</strong>：定义<span class="math inline">\(m[i][j]\)</span>为计算<span class="math inline">\(A[i:j]\)</span>（即从第<span class="math inline">\(i\)</span>个矩阵到第<span class="math inline">\(j\)</span>个矩阵的乘积）的最小乘法次数。</p></li>
+<li><p><strong>状态转移方程</strong>：对于<span class="math inline">\(i
+\leq k &lt; j\)</span>，我们可以在<span class="math inline">\(A_k\)</span>和<span class="math inline">\(A_{k+1}\)</span>之间断开，那么<span class="math inline">\(m[i][j]\)</span>可以表示为： $ m[i][j] = <em>{i k
+&lt; j} (m[i][k] + m[k+1][j] + p</em>{i-1}p_kp_j) $ 其中，<span class="math inline">\(m[i][k]\)</span>是计算<span class="math inline">\(A[i:k]\)</span>的最小乘法次数，<span class="math inline">\(m[k+1][j]\)</span>是计算<span class="math inline">\(A[k+1:j]\)</span>的最小乘法次数，<span class="math inline">\(p_{i-1}p_kp_j\)</span>是将<span class="math inline">\(A[i:k]\)</span>和<span class="math inline">\(A[k+1:j]\)</span>相乘的乘法次数。</p></li>
+<li><p><strong>边界条件</strong>：当<span class="math inline">\(i =
+j\)</span>时，即只有一个矩阵，不需要乘法，所以<span class="math inline">\(m[i][i] = 0\)</span>。</p></li>
+<li><p><strong>计算顺序</strong>：我们从最小的子问题开始，即先计算<span class="math inline">\(m[i][i+1]\)</span>，然后是<span class="math inline">\(m[i][i+2]\)</span>，以此类推，直到计算出<span class="math inline">\(m[1][n]\)</span>，即整个矩阵链的最小乘法次数。</p></li>
+<li><p><strong>构造解</strong>：在计算<span class="math inline">\(m[i][j]\)</span>的同时，我们还需要记录最优断开点<span class="math inline">\(k\)</span>，以便最后能够构造出最优的完全括号化方式。</p></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#利用递归实现，存在大量重复计算，比如函数中计算的当前状态下最优的t并未保存下来</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">i:<span class="hljs-built_in">int</span>,j:<span class="hljs-built_in">int</span>,lst:<span class="hljs-built_in">list</span>,matrix:<span class="hljs-built_in">list</span></span>)-&gt;<span class="hljs-built_in">int</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    i:用于记录矩阵序号</span><br><span class="hljs-string">    j:用于记录矩阵序号</span><br><span class="hljs-string">    lst:用于记录最优分割点</span><br><span class="hljs-string">    matrix:记录矩阵维数的列表</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    <span class="hljs-keyword">if</span> i==j:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    u=fun(i,j,<span class="hljs-built_in">list</span>,matrix)+fun(i+<span class="hljs-number">1</span>,j,lst,matrix)+matrix[i-<span class="hljs-number">1</span>]*matrix[i]*matrix[j]<br>    lst[i][j]=i<br>    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> (i+<span class="hljs-number">1</span>,j):<br>        t=fun(i,k,lst,matrix)+fun(k+<span class="hljs-number">1</span>,j,lst,matrix)+matrix[i-<span class="hljs-number">1</span>]*matrix[k]*matrix[j]<br>        <span class="hljs-keyword">if</span> t&lt;u:<br>            u=t<br>            lst[i][j]=k<br>	<span class="hljs-keyword">return</span> u<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#去除递归，记录已经计算得到的结果</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">p:<span class="hljs-built_in">list</span></span>)-&gt;<span class="hljs-built_in">list</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    p:记录各个矩阵维数的列表</span><br><span class="hljs-string">    m:列表，用于记录当前最优的分割点</span><br><span class="hljs-string">    s:列表，用于记录当前最优的相乘次数</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    <span class="hljs-comment">#初始化</span><br>    n=<span class="hljs-built_in">len</span>(p)-<span class="hljs-number">1</span> <span class="hljs-comment">#矩阵数量</span><br>    m=[[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<br>    s=[[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<br>    <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,n+<span class="hljs-number">1</span>):<span class="hljs-comment">#用于表示当前考虑的矩阵链长度，最短是2</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n-l+<span class="hljs-number">1</span>):<span class="hljs-comment">#用于表示矩阵链的起始位置</span><br>            j=i+l-<span class="hljs-number">1</span><span class="hljs-comment">#这是当前矩阵链的结束位置</span><br>            m[i][j]=<span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;inf&#x27;</span>)<span class="hljs-comment">#初始化当前子问题的最优解，初始为正无穷</span><br>            <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i,j):<span class="hljs-comment">#用于表示分割点位置</span><br>                q=m[i][k]+m[k+<span class="hljs-number">1</span>][j]+p[i]*p[k+<span class="hljs-number">1</span>]*p[j-<span class="hljs-number">1</span>]<span class="hljs-comment">#计算当前分割点的矩阵链乘数</span><br>                <span class="hljs-keyword">if</span> q&lt;m[i][j]:<span class="hljs-comment">#判断是否更优</span><br>                    m[i][j]=q<br>                    s[i][j]=k<br>    <span class="hljs-keyword">return</span> m,s<br></code></pre></td></tr></table></figure>
+<h2 id="最长公共子序列">3、最长公共子序列</h2>
+<ul>
+<li>描述：字符序列的子序列是指从给定字符序列中随意地（不一定连续）去掉若干个字符（可能一个也不去掉）后所形成的字符序列。令给定的字符序列X=“<span class="math inline">\(x_0，x_1，…，x_{m-1}\)</span>”，序列Y=“<span class="math inline">\(y_0，y_1，…，y_{k-1}\)</span>”是X的子序列，存在X的一个严格递增下标序列<span class="math inline">\(&lt;i_0，i_1，…，i_{k-1}&gt;\)</span>，使得对所有的<span class="math inline">\(j=0，1，…，k-1\)</span>，有<span class="math inline">\(x_{ij}\)</span>=<span class="math inline">\(y_j\)</span>。例如，X=“ABCBDAB”，Y=“BCDB”是X的一个子序列。给定一个序列Z，该序列既是Y的子序列，又是X的子序列，称Z是X和Y的公共子序列。</li>
+<li>思考：求两个数组<span class="math inline">\(A[n]\)</span>和<span class="math inline">\(B[m]\)</span>的最长公共子序列，可以自底而上地进行考虑。举例，当这两个数组的长度为0时，则最长公共子序列为0，使用<span class="math inline">\(M[0][0]\)</span>进行记录；当A数组长度为1，数组长度为0时，使用<span class="math inline">\(M[1][0]\)</span>进行记录。已知无论哪个数组长度为0时，这个的最长公共子序列都为0，因此<span class="math inline">\(M[0][y]=0\)</span>，<span class="math inline">\(M[x][0]=0\)</span>；当数组长度都为1时，此时<span class="math inline">\(M[1][0]\)</span>和<span class="math inline">\(M[0][1]\)</span>已知，只需要比较<span class="math inline">\(A[1]\)</span>和<span class="math inline">\(B[1]\)</span>是否相等，相等则加1，不相等则加0，因此<span class="math inline">\(M[1][1]=max(M[0][1],M[1],[0])+1或0\)</span></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">A:<span class="hljs-built_in">list</span>,B:<span class="hljs-built_in">list</span></span>)-&gt;<span class="hljs-built_in">int</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    A,B：传入的两个一维数组</span><br><span class="hljs-string">    M：用于记录当前最优解</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    <span class="hljs-comment">#初始化M</span><br>    M=[[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(B))] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(A))]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(A)):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(B)):<br>            <span class="hljs-keyword">if</span> A[i]==B[j]:<br>                M[i][j]=<span class="hljs-built_in">max</span>(M[i-<span class="hljs-number">1</span>][j],M[i][j-<span class="hljs-number">1</span>])+<span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                M[i][j]=<span class="hljs-built_in">max</span>(M[i-<span class="hljs-number">1</span>][j],M[i][j-<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">return</span> M[-<span class="hljs-number">1</span>][-<span class="hljs-number">1</span>]<br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    A=[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>]<br>    B=[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>]<br>    <span class="hljs-built_in">print</span>(fun(A,B)) <br></code></pre></td></tr></table></figure>
+<h2 id="最大子段和">4、最大子段和</h2>
+<ul>
+<li><p>描述：给定由n个整数(可能为负整数)组成的序列<span class="math inline">\(a_1,a_2,…,a_n\)</span>，求该序列形如<span class="math inline">\(\sum_{n=i}^j
+a_n\)</span>的子段和的最大值。当所有和为负整数时定义其最大子段和为0。</p></li>
+<li><p>思考：自底而上，m用于表示子段结束位置。假设数组A长度为2，当m=0时，当前子段只有一个数，使用<span class="math inline">\(M[0]\)</span>记录当前值作为当前子段和最优解；当m=1时，使用<span class="math inline">\(M[1]\)</span>记录当前子段的最优解，<span class="math inline">\(M[1]=max(A[0],M[0]+A[1])\)</span>。</p></li>
+<li><p>疑问：为什么是<span class="math inline">\(M[1]=max(A[0],M[0]+A[1])\)</span>而不是<span class="math inline">\(M[1]=max(M[0],M[0]+A[1])\)</span>？</p>
+<ul>
+<li><p>对于每个元素<span class="math inline">\(a_i\)</span>，我们有两种选择：要么将<span class="math inline">\(a_i\)</span>加入到前一个子段中，要么从<span class="math inline">\(a_i\)</span>开始一个新的子段。因此，<span class="math inline">\(M[i]\)</span>的值应该是这两种选择中的最大值。</p>
+<p>具体来说，对于<span class="math inline">\(M[1]\)</span>的计算，我们有以下两种情况：</p>
+<ol type="1">
+<li>从<span class="math inline">\(a_0\)</span>开始的子段加上<span class="math inline">\(a_1\)</span>，即<span class="math inline">\(M[0] +
+a_1\)</span>。</li>
+<li>从<span class="math inline">\(a_1\)</span>开始一个新的子段，即<span class="math inline">\(a_1\)</span>本身。</li>
+</ol>
+<p>因此，<span class="math inline">\(M[1]\)</span>的值应该是这两种情况中的最大值，即<span class="math inline">\(M[1] = \max(a_1, M[0] + a_1)\)</span>。</p>
+<p>所以，<span class="math inline">\(M[1] = \max(A[0], M[0] +
+A[1])\)</span>是正确的，因为它考虑了从<span class="math inline">\(a_1\)</span>开始新子段的情况和将<span class="math inline">\(a_1\)</span>加入到以<span class="math inline">\(a_0\)</span>结尾的子段中的情况。而<span class="math inline">\(M[1] = \max(M[0], M[0] +
+A[1])\)</span>是错误的，因为它没有考虑从<span class="math inline">\(a_1\)</span>开始新子段的情况，只考虑了将<span class="math inline">\(a_1\)</span>加入到以<span class="math inline">\(a_0\)</span>结尾的子段中的情况。</p>
+<p>因此，正确的表达式是<span class="math inline">\(M[1] = \max(A[0],
+M[0] + A[1])\)</span>。</p></li>
+</ul></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">nums:<span class="hljs-built_in">list</span></span>)-&gt;<span class="hljs-built_in">int</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    maxSum:用于记录全局最优解</span><br><span class="hljs-string">    current：用于记录当前最优解</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    maxSum=nums[<span class="hljs-number">0</span>]<br>    current=nums[<span class="hljs-number">0</span>]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(nums)):<br>        current=<span class="hljs-built_in">max</span>(nums[i],nums[i]+current)<br>        maxSum=<span class="hljs-built_in">max</span>(maxSum,current)<br>    reuturn maxSum<br><br><span class="hljs-comment">#记录最优解的起始位置</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">nums: <span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-built_in">tuple</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    maxSum: 用于记录全局最优解</span><br><span class="hljs-string">    current: 用于记录当前最优解</span><br><span class="hljs-string">    start: 当前子段的起始位置</span><br><span class="hljs-string">    end: 当前子段的结束位置</span><br><span class="hljs-string">    temp_start: 临时起始位置，用于更新start</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    maxSum = nums[<span class="hljs-number">0</span>]<br>    current = nums[<span class="hljs-number">0</span>]<br>    start = <span class="hljs-number">0</span><br>    end = <span class="hljs-number">0</span><br>    temp_start = <span class="hljs-number">0</span><br><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-built_in">len</span>(nums)):<br>        <span class="hljs-keyword">if</span> nums[i] &gt; nums[i] + current:<br>            current = nums[i]<br>            temp_start = i<br>        <span class="hljs-keyword">else</span>:<br>            current += nums[i]<br><br>        <span class="hljs-keyword">if</span> current &gt; maxSum:<br>            maxSum = current<br>            start = temp_start<br>            end = i<br><br>    <span class="hljs-keyword">return</span> maxSum, start, end<br></code></pre></td></tr></table></figure>
+<p>注：该问题可以使用顺序求和、分治法、动态规划等算法进行解决</p>
+<h2 id="背包问题">5、0-1背包问题</h2>
+<ul>
+<li><p>描述：有n
+个物品，它们有各自的重量和价值，现有给定容量的背包，如何让背包里装入的物品具有最大的价值总和？有n种可选物1，…，n，放入容量为c的背包内，背包容量不足以装入所有物品，使装入的物品具有最大效益。</p></li>
+<li><p>思考：</p>
+<ul>
+<li>有 $ n $ 个物品，每个物品的重量为 $ w_i $，价值为 $ v_i $。</li>
+<li>背包的重量限制为 $ W $。</li>
+<li>求解在重量限制 $ W $ 内，背包中可以装入的物品的最大价值。</li>
+</ul>
+<ol type="1">
+<li><strong>定义状态</strong>：
+<ul>
+<li>==令 $ dp[i][j] $ 表示前 $ i $ 个物品中，总重量不超过 $ j $
+时的最大价值==。</li>
+</ul></li>
+<li><strong>状态转移方程</strong>：
+<ul>
+<li>对于第 $ i $ 个物品，有两种选择：装入背包或不装入背包。</li>
+<li>如果不装入背包，那么 <span class="math inline">\(dp[i][j]=dp[i-1][j]\)</span>。</li>
+<li>如果装入背包，那么 $ dp[i][j] = dp[i-1][j-w_i] + v_i $（前提是 $ j
+w_i $）。</li>
+<li>因此，状态转移方程为： $ dp[i][j] = (dp[i-1][j], dp[i-1][j-w_i] +
+v_i) j w_i $ $ dp[i][j] = dp[i-1][j] j &lt; w_i $</li>
+</ul></li>
+<li><strong>初始化</strong>：
+<ul>
+<li>$dp[0][j] = 0 $对于所有 $ j $，表示没有物品时，任何重量的背包价值为
+0。</li>
+<li>$dp[i][0] = 0 $对于所有 <span class="math inline">\(i\)</span>，表示重量为 0
+的背包，无论有多少物品，价值为 0。</li>
+</ul></li>
+<li><strong>计算顺序</strong>：
+<ul>
+<li>按照 $ i $ 从 1 到 $ n $，对于每个 $ i $，按照 $ j $ 从 0 到 $ W $
+计算 $ dp[i][j] $。</li>
+</ul></li>
+<li><strong>最终答案</strong>：
+<ul>
+<li>最大价值为 $ dp[n][W] $。</li>
+</ul></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">knapsack</span>(<span class="hljs-params">W, weights, values</span>):<br>    n = <span class="hljs-built_in">len</span>(weights)<br>    dp = [[<span class="hljs-number">0</span>] * (W + <span class="hljs-number">1</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n + <span class="hljs-number">1</span>)]<br>    <br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, n + <span class="hljs-number">1</span>):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(W + <span class="hljs-number">1</span>):<br>            <span class="hljs-keyword">if</span> j &gt;= weights[i-<span class="hljs-number">1</span>]:<br>                dp[i][j] = <span class="hljs-built_in">max</span>(dp[i-<span class="hljs-number">1</span>][j], dp[i-<span class="hljs-number">1</span>][j-weights[i-<span class="hljs-number">1</span>]] + values[i-<span class="hljs-number">1</span>])<br>            <span class="hljs-keyword">else</span>:<br>                dp[i][j] = dp[i-<span class="hljs-number">1</span>][j]<br>    <br>    <span class="hljs-keyword">return</span> dp[n][W]<br></code></pre></td></tr></table></figure></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="print-no-link">#动态规划</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算机算法-3</div>
+      <div>http://example.com/2024/12/29/算法/计算机算法-3/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>无人知我意</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年12月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/" title="计算机算法-4">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机算法-4</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/27/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-2/" title="计算机算法-2">
+                        <span class="hidden-mobile">计算机算法-2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
