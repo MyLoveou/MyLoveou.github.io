@@ -21,20 +21,21 @@
   
     <meta name="description" content="递归与分治 一、递归 1、阶乘函数  递归基本思想：直接或间接调用自身的算法称为递归算法   阶乘函数  12345def factorial(n):    if n &#x3D;&#x3D; 0:        return 1    else:        return n * factorial(n-1)  阶乘函数的尾递归版本  12345def factorial(n, acc&#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机算法-2">
+<meta property="og:title" content="递归和分治">
 <meta property="og:url" content="http://example.com/2024/12/27/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-2/index.html">
 <meta property="og:site_name" content="我的世界">
 <meta property="og:description" content="递归与分治 一、递归 1、阶乘函数  递归基本思想：直接或间接调用自身的算法称为递归算法   阶乘函数  12345def factorial(n):    if n &#x3D;&#x3D; 0:        return 1    else:        return n * factorial(n-1)  阶乘函数的尾递归版本  12345def factorial(n, acc&#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-27T08:18:18.000Z">
-<meta property="article:modified_time" content="2024-12-28T13:54:36.896Z">
+<meta property="article:modified_time" content="2025-01-16T05:46:29.606Z">
 <meta property="article:author" content="无人知我意">
-<meta property="article:tag" content="递归 分zhi">
+<meta property="article:tag" content="递归">
+<meta property="article:tag" content="分治">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>计算机算法-2 - 我的世界</title>
+  <title>递归和分治 - 我的世界</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,13 +195,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="计算机算法-2"></span>
+            <span id="subtitle" data-typed-text="递归和分治"></span>
           
         </div>
 
@@ -271,7 +272,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">计算机算法-2</h1>
+            <h1 id="seo-header">递归和分治</h1>
             
             
               <div class="markdown-body">
@@ -310,19 +311,23 @@
 <li>思考：这是一个双递归函数。在正整数n的所有划分中，将最大加数<span class="math inline">\(n_1\)</span>不大于m的划分个数记作<span class="math inline">\(q(n,m)\)</span></li>
 </ul>
 <p><span class="math display">\[q(n,m)=\begin{cases}1,&amp;\text{n=1,m=1}\\q(n,n),&amp;\text{n&lt;m}\\1+q(n,n-1),&amp;\text{n=m}\\q(n,m-1)+q(n-m,m),&amp;\text{n&gt;m&gt;1}\end{cases}\]</span></p>
-<p>根据n和m的关系，考虑以下几种情况： 1.
-当n=1时，不论m的值为多少（m&gt;0)，只有一种划分即{1}; 2.
-当m=1时，不论n的值为多少，只有一种划分即n个1，{1,1,1,...,1}; 3.
-当n=m时，根据划分中是否包含n，可以分为两种情况： 1.
-划分中包含n的情况，只有一个即{n}； 2.
-划分中不包含n的情况，这时划分中最大的数字也一定比n小，即n的所有(n-1)划分。
-因此 f(n,n) =1 + f(n,n-1); 4.
-当n&lt;m时，由于划分中不可能出现负数，因此就相当于f(n,n); 5.
-但n&gt;m时，根据划分中是否包含最大值m，可以分为两种情况： 1.
-划分中包含m的情况，即{m, {x1,x2,...xi}}, 其中{x1,x2,... xi}
-的和为n-m，因此这情况下为f(n-m,m) 2.
-划分中不包含m的情况，则划分中所有值都比m小，即n的(m-1)划分，个数为f(n,m-1);
-因此 f(n, m) = f(n-m, m)+f(n,m-1);</p>
+<p>根据n和m的关系，考虑以下几种情况：</p>
+<ol type="1">
+<li><p>当n=1时，不论m的值为多少（m&gt;0)，只有一种划分即{1};</p></li>
+<li><p>当m=1时，不论n的值为多少，只有一种划分即n个1，{1,1,1,...,1};</p></li>
+<li><p>当n=m时，根据划分中是否包含n，可以分为两种情况：
+划分中包含n的情况，只有一个即{n}；</p>
+<ol type="1">
+<li>划分中不包含n的情况，这时划分中最大的数字也一定比n小，即n的所有(n-1)划分。
+因此 f(n,n) =1 + f(n,n-1);</li>
+<li>当n&lt;m时，由于划分中不可能出现负数，因此就相当于f(n,n);</li>
+</ol></li>
+<li><p>但n&gt;m时，根据划分中是否包含最大值m，可以分为两种情况：</p></li>
+<li><p>划分中包含m的情况，即{m, {x1,x2,...xi}}, 其中{x1,x2,... xi}
+的和为n-m，因此这情况下为f(n-m,m)</p></li>
+<li><p>划分中不包含m的情况，则划分中所有值都比m小，即n的(m-1)划分，个数为f(n,m-1);
+因此 f(n, m) = f(n-m, m)+f(n,m-1);</p></li>
+</ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">q</span>(<span class="hljs-params">n:<span class="hljs-built_in">int</span>,m:<span class="hljs-built_in">int</span></span>)-&gt;<span class="hljs-built_in">int</span>:<br>    <span class="hljs-keyword">if</span> n&lt;<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> m&lt;<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    <span class="hljs-keyword">elif</span> n==<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> m==<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">elif</span> n==m:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>+q(n,n-<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">elif</span> n&lt;m:<br>        <span class="hljs-keyword">return</span> q(n,n)<br>    <span class="hljs-keyword">elif</span> n&gt;m:<br>        <span class="hljs-keyword">return</span> q(n,m-<span class="hljs-number">1</span>)+q(n-m,m)<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>递归算法的优点：结构清晰，可读性强，而且容易使用数学归纳法来证明算法的正确性。</p>
@@ -347,7 +352,7 @@
 <li>思考：面对一个<span class="math inline">\(2^k \times
 2^k\)</span>个方格组成的棋盘，将其分成四个等大的小棋盘，如果存在一个特殊方格在一个小棋盘上，则将这个L型的骨牌覆盖其他三个小棋盘。</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs python">ti = <span class="hljs-number">0</span>  <span class="hljs-comment"># 骨牌编号</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">tr, tc, dr, dc, size</span>):<br>    <span class="hljs-keyword">global</span> ti, matrix<br>    <span class="hljs-keyword">if</span> size == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span>  <span class="hljs-comment"># 当棋盘分割到1x1时终止递归</span><br>    <span class="hljs-keyword">else</span>:<br>        s = size // <span class="hljs-number">2</span>  <span class="hljs-comment"># 分割棋盘</span><br>        ti += <span class="hljs-number">1</span>  <span class="hljs-comment"># 对骨牌进行编号</span><br>        t=ti<br>        <span class="hljs-comment"># 检查特殊方块在哪个子棋盘</span><br>        <span class="hljs-keyword">if</span> dr &lt; tr + s <span class="hljs-keyword">and</span> dc &lt; tc + s:  <span class="hljs-comment"># 左上子棋盘</span><br>            func(tr, tc, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 左上子棋盘放置L型骨牌</span><br>            matrix[tr + s - <span class="hljs-number">1</span>][tc + s - <span class="hljs-number">1</span>] = t<br>            func(tr, tc, tr + s - <span class="hljs-number">1</span>, tc + s - <span class="hljs-number">1</span>, s)<br>        <span class="hljs-keyword">if</span> dr &lt; tr + s <span class="hljs-keyword">and</span> dc &gt;= tc + s:  <span class="hljs-comment"># 右上子棋盘</span><br>            func(tr, tc + s, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 右上子棋盘放置L型骨牌</span><br>            matrix[tr + s - <span class="hljs-number">1</span>][tc + s] = t<br>            func(tr, tc + s, tr + s - <span class="hljs-number">1</span>, tc + s, s)<br>        <span class="hljs-keyword">if</span> dr &gt;= tr + s <span class="hljs-keyword">and</span> dc &lt; tc + s:  <span class="hljs-comment"># 左下子棋盘</span><br>            func(tr + s, tc, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 左下子棋盘放置L型骨牌</span><br>            matrix[tr + s][tc + s - <span class="hljs-number">1</span>] = t<br>            func(tr + s, tc, tr + s, tc + s - <span class="hljs-number">1</span>, s)<br>        <span class="hljs-keyword">if</span> dr &gt;= tr + s <span class="hljs-keyword">and</span> dc &gt;= tc + s:  <span class="hljs-comment"># 右下子棋盘</span><br>            func(tr + s, tc + s, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 右下子棋盘放置L型骨牌</span><br>            matrix[tr + s][tc + s] = t<br>            func(tr + s, tc + s, tr + s, tc + s, s)<br>matrix = [[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>)]<br>func(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>)<br><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> matrix:<br>    <span class="hljs-built_in">print</span>(row)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">tr, tc, dr, dc, size</span>):<br>    <span class="hljs-keyword">global</span> ti, matrix<br>    <span class="hljs-keyword">if</span> size == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span>  <span class="hljs-comment"># 当棋盘分割到1x1时终止递归</span><br>    <span class="hljs-keyword">else</span>:<br>        s = size // <span class="hljs-number">2</span>  <span class="hljs-comment"># 分割棋盘</span><br>        ti += <span class="hljs-number">1</span>  <span class="hljs-comment"># 对骨牌进行编号</span><br>        t=ti<br>        <span class="hljs-comment"># 检查特殊方块在哪个子棋盘</span><br>        <span class="hljs-keyword">if</span> dr &lt; tr + s <span class="hljs-keyword">and</span> dc &lt; tc + s:  <span class="hljs-comment"># 左上子棋盘</span><br>            func(tr, tc, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 左上子棋盘放置L型骨牌</span><br>            matrix[tr + s - <span class="hljs-number">1</span>][tc + s - <span class="hljs-number">1</span>] = t<br>            func(tr, tc, tr + s - <span class="hljs-number">1</span>, tc + s - <span class="hljs-number">1</span>, s)<br>        <span class="hljs-keyword">if</span> dr &lt; tr + s <span class="hljs-keyword">and</span> dc &gt;= tc + s:  <span class="hljs-comment"># 右上子棋盘</span><br>            func(tr, tc + s, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 右上子棋盘放置L型骨牌</span><br>            matrix[tr + s - <span class="hljs-number">1</span>][tc + s] = t<br>            func(tr, tc + s, tr + s - <span class="hljs-number">1</span>, tc + s, s)<br>        <span class="hljs-keyword">if</span> dr &gt;= tr + s <span class="hljs-keyword">and</span> dc &lt; tc + s:  <span class="hljs-comment"># 左下子棋盘</span><br>            func(tr + s, tc, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 左下子棋盘放置L型骨牌</span><br>            matrix[tr + s][tc + s - <span class="hljs-number">1</span>] = t<br>            func(tr + s, tc, tr + s, tc + s - <span class="hljs-number">1</span>, s)<br>        <span class="hljs-keyword">if</span> dr &gt;= tr + s <span class="hljs-keyword">and</span> dc &gt;= tc + s:  <span class="hljs-comment"># 右下子棋盘</span><br>            func(tr + s, tc + s, dr, dc, s)<br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 右下子棋盘放置L型骨牌</span><br>            matrix[tr + s][tc + s] = t<br>            func(tr + s, tc + s, tr + s, tc + s, s)<br>ti = <span class="hljs-number">0</span>  <span class="hljs-comment"># 骨牌编号</span><br>matrix = [[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>)]<br>func(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>)<br><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> matrix:<br>    <span class="hljs-built_in">print</span>(row)<br></code></pre></td></tr></table></figure>
 <h3 id="线性时间选择">2、线性时间选择</h3>
 <ul>
 <li>描述：在n个元素的无序数组中选择第k小元素
@@ -441,7 +446,7 @@
 <li>在遍历过程中，如果出现不同于当前记录的这三个ID的其他ID时，分别查看这三个ID出现次数，如果这三个ID中存在次数为0的ID，则将该ID替换为当前遍历到的ID。如果这三个ID均不为0，则每个ID出现次数-1</li>
 </ul></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs PYTHON"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">nums:<span class="hljs-built_in">list</span></span>)-&gt;<span class="hljs-literal">None</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    nums:ID列表</span><br><span class="hljs-string">    lst：三行两列数组，一行用于存放ID，一行用于存放ID出现次数</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    lst=[[<span class="hljs-literal">None</span>,<span class="hljs-number">0</span>],[<span class="hljs-literal">None</span>,<span class="hljs-number">0</span>],[<span class="hljs-literal">None</span>,<span class="hljs-number">0</span>]]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nums:<br>        <span class="hljs-keyword">if</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=i<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=i<br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]=i<br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> i <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> nums:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span><br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span><br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span><br>    <span class="hljs-built_in">print</span>(lst)<br><br>nums=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]<br>fun(nums)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs PYTHON"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">nums:<span class="hljs-built_in">list</span></span>)-&gt;<span class="hljs-literal">None</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    nums:ID列表</span><br><span class="hljs-string">    lst：三行两列数组，一行用于存放ID，一行用于存放ID出现次数</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    lst=[[<span class="hljs-literal">None</span>,<span class="hljs-number">0</span>],[<span class="hljs-literal">None</span>,<span class="hljs-number">0</span>],[<span class="hljs-literal">None</span>,<span class="hljs-number">0</span>]]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nums:<br>        <span class="hljs-keyword">if</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]==i:<br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=i<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=i<br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]==<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>]=i<br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]!=i <span class="hljs-keyword">and</span> lst[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]!=i:<br>            lst[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span><br>            lst[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span><br>            lst[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span><br>    <span class="hljs-built_in">print</span>(lst)<br><br>nums=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]<br>fun(nums)<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -475,7 +480,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%80%92%E5%BD%92-%E5%88%86zhi/" class="print-no-link">#递归 分zhi</a>
+        <a href="/tags/%E9%80%92%E5%BD%92/" class="print-no-link">#递归</a>
+      
+        <a href="/tags/%E5%88%86%E6%B2%BB/" class="print-no-link">#分治</a>
       
     </div>
   
@@ -487,7 +494,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计算机算法-2</div>
+      <div>递归和分治</div>
       <div>http://example.com/2024/12/27/算法/计算机算法-2/</div>
     </div>
     <div class="license-meta">
@@ -532,9 +539,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/29/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-3/" title="计算机算法-3">
+                      <a href="/2024/12/29/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-3/" title="动态规划">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机算法-3</span>
+                        <span class="hidden-mobile">动态规划</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -542,8 +549,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/" title="计算机算法-1">
-                        <span class="hidden-mobile">计算机算法-1</span>
+                      <a href="/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/" title="算法效率分析">
+                        <span class="hidden-mobile">算法效率分析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

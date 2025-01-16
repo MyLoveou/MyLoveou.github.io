@@ -19,25 +19,24 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="算法效率基础 算法分析是对算法需要多少计算时间和存储空间作定量的分析,因此算法的复杂性存在空间复杂性和时间复杂性两个方面。算法的复杂性是算法运行需要的计算机资源的量。 1. 影响算法复杂性的因素  要解的问题的规模：问题本身 算法的输入：要处理的数据 算法本身的函数：处理问题的方法  2. 元运算  对任何计算步骤，他的代价总是一个时间常量为上界，不管数据输入或执行的算法，我们">
+    <meta name="description" content="Conda基础操作 1. conda环境查询 12conda info#当前环境配置查询conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  1conda create -n python313 python&#x3D;3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python&#x3D;3.13&quot;设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法效率分析">
-<meta property="og:url" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/index.html">
+<meta property="og:title" content="Conda创建和使用环境">
+<meta property="og:url" content="http://example.com/2025/01/16/Conda/Conda%E5%9F%BA%E7%A1%80-1/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="算法效率基础 算法分析是对算法需要多少计算时间和存储空间作定量的分析,因此算法的复杂性存在空间复杂性和时间复杂性两个方面。算法的复杂性是算法运行需要的计算机资源的量。 1. 影响算法复杂性的因素  要解的问题的规模：问题本身 算法的输入：要处理的数据 算法本身的函数：处理问题的方法  2. 元运算  对任何计算步骤，他的代价总是一个时间常量为上界，不管数据输入或执行的算法，我们">
+<meta property="og:description" content="Conda基础操作 1. conda环境查询 12conda info#当前环境配置查询conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  1conda create -n python313 python&#x3D;3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python&#x3D;3.13&quot;设">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image.png">
-<meta property="og:image" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image-20250107223852554.png">
-<meta property="article:published_time" content="2024-12-25T04:53:14.000Z">
-<meta property="article:modified_time" content="2025-01-16T05:46:42.626Z">
+<meta property="article:published_time" content="2025-01-16T05:48:55.000Z">
+<meta property="article:modified_time" content="2025-01-16T14:25:31.880Z">
 <meta property="article:author" content="无人知我意">
-<meta property="article:tag" content="算法效率分析">
+<meta property="article:tag" content="环境查询">
+<meta property="article:tag" content="环境创建">
+<meta property="article:tag" content="Conda">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image.png">
   
   
   
-  <title>算法效率分析 - 我的世界</title>
+  <title>Conda创建和使用环境 - 我的世界</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="算法效率分析"></span>
+            <span id="subtitle" data-typed-text="Conda创建和使用环境"></span>
           
         </div>
 
@@ -214,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-25 12:53" pubdate>
-          2024年12月25日 下午
+        <time datetime="2025-01-16 13:48" pubdate>
+          2025年1月16日 下午
         </time>
       </span>
     
@@ -226,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          836 字
+          102 字
         
       </span>
     
@@ -237,7 +236,7 @@
         
         
         
-          7 分钟
+          1 分钟
         
       </span>
     
@@ -274,61 +273,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">算法效率分析</h1>
+            <h1 id="seo-header">Conda创建和使用环境</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="算法效率基础">算法效率基础</h1>
-<p><strong>算法分析是对算法需要多少计算时间和存储空间作定量的分析,因此算法的复杂性存在空间复杂性和时间复杂性两个方面。算法的复杂性是算法运行需要的计算机资源的量。</strong></p>
-<h2 id="影响算法复杂性的因素">1. 影响算法复杂性的因素</h2>
+                <h1 id="conda基础操作">Conda基础操作</h1>
+<h2 id="conda环境查询">1. conda环境查询</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">conda info<span class="hljs-comment">#当前环境配置查询</span><br>conda info --env<span class="hljs-comment">#查询conda安装的所有环境</span><br></code></pre></td></tr></table></figure>
+<h2 id="conda创建环境">2. conda创建环境</h2>
 <ol type="1">
-<li>要解的问题的规模：问题本身</li>
-<li>算法的输入：要处理的数据</li>
-<li>算法本身的函数：处理问题的方法</li>
+<li>创建环境</li>
 </ol>
-<h2 id="元运算">2. 元运算</h2>
-<blockquote>
-<p>对任何计算步骤，他的代价总是一个时间常量为上界，不管数据输入或执行的算法，我们称该步骤为“元运算”。通俗讲就是时间固定</p>
-</blockquote>
-<blockquote>
-<p>举例：访问数组中的一个元素就是一个“元运算”，因为不管你的数组有多大，访问任何一个特定位置的元素所需的时间都是相同的，这个时间是一个常数，不会随着数组大小的变化而变化。</p>
-</blockquote>
-<h2 id="如何度量运行时间即算法的时间复杂度">3.
-如何度量运行时间（即算法的时间复杂度）</h2>
-<blockquote>
-<p>用算法的基本操作的执行次数来度量算法的时间效率</p>
-</blockquote>
-<blockquote>
-<p>所谓的基本操作，就是指算法中最基本的操作，比如：赋值、比较、输入输出等。</p>
-</blockquote>
-<h2 id="算法复杂性符号表示">4. 算法复杂性符号表示</h2>
-<ol type="1">
-<li>Θ：是渐进紧确界记号，当且仅当<span class="math inline">\(\lim\limits_{n\rightarrow\infty}\frac{f(n)}{g(n)}\)</span>存在并等于一个常数，那么f(n)=Θ(g(n))。也就是f(n)和g(n)同阶。</li>
-<li>O：是渐进上界记号，当存在正整数c和<span class="math inline">\(n_0\)</span>，使得当n&gt;=<span class="math inline">\(n_0\)</span>时，f(n)&lt;=cg(n)。则f(n)的渐进上界是g(n),<span class="math inline">\(f(n)=O(g(n))\)</span>。通俗说当n在一定范围内时，函数f(n)的阶不高于函数g(n)。g(n)的阶越低越精确。</li>
-<li>Ω：是渐进下界记号，当存在正整数c和<span class="math inline">\(n_0\)</span>，使得当n&gt;=<span class="math inline">\(n_0\)</span>时，f(n)&gt;=cg(n)。则f(n)的渐进下界是g(n),<span class="math inline">\(f(n)=Ω(g(n))\)</span>。通俗说当n在一定范围内时，函数f(n)的阶不低于函数g(n)。g(n)的阶越高越精确。
-<img src="/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image.png" srcset="/img/loading.gif" lazyload alt="'图片1'" style="zoom:67%;">
-## 5. 如何分析非递归算法效率</li>
-<li>找出算法的基本操作</li>
-<li>检查基本操作的执行次数是否只依赖输入规模</li>
-<li>建立一个算法基本操作执行次数的求和表达式 ## 6.
-如何分析递归算法效率</li>
-<li>找出递归的边界条件,一般而言递归的边界条件是n=1，而且是进行切半的操作。
-<span class="math display">\[T(n)=\begin{cases}O(1),&amp;\text{n=1}\\kT(n/2)+O(1),&amp;\text{n&gt;1}\end{cases}\]</span></li>
-<li>分析递归式的解法</li>
-<li>计算递归式的解法的执行次数</li>
-<li>建立递归式的解法的执行次数的求和表达式
-（注：递归算法代码简洁，但是效率低下） ## 7. 主定理解决递归效率问题</li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">conda create -n python313 python=<span class="hljs-number">3.13</span>  <span class="hljs-comment">#&quot;python313&quot;是我自定义的环境名称，&quot;python=3.13&quot;设置配置环境中python版本</span><br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>激活并使用所创建的环境</li>
 </ol>
-<ul>
-<li>主定理提供一个通用的方法来解决形如<span class="math inline">\(T(n)=aT(n/b)+f(n)\)</span>的递归式的效率问题。</li>
-</ul>
-<ol type="1">
-<li>n：是问题的规模</li>
-<li>a：是原问题的子问题个数</li>
-<li><span class="math inline">\(\frac{n}{b}\)</span>：是子问题的规模大小</li>
-<li>f(n)：是将原问题分解成子问题和将子问题的解合并成原问题的解的时间
-<img src="/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image-20250107223852554.png" srcset="/img/loading.gif" lazyload alt="image-20250107223852554" style="zoom:50%;"></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">conda activate python313  <span class="hljs-comment">#“python313”是所要使用环境名称</span><br></code></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>删除不需要的环境 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">conda remove -n python313 --<span class="hljs-built_in">all</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 
                 
@@ -348,7 +311,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  <a href="/categories/Conda/" class="category-chain-item">Conda</a>
   
   
 
@@ -363,7 +326,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90/" class="print-no-link">#算法效率分析</a>
+        <a href="/tags/%E7%8E%AF%E5%A2%83%E6%9F%A5%E8%AF%A2/" class="print-no-link">#环境查询</a>
+      
+        <a href="/tags/%E7%8E%AF%E5%A2%83%E5%88%9B%E5%BB%BA/" class="print-no-link">#环境创建</a>
+      
+        <a href="/tags/Conda/" class="print-no-link">#Conda</a>
       
     </div>
   
@@ -375,8 +342,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>算法效率分析</div>
-      <div>http://example.com/2024/12/25/算法/计算机算法-1/</div>
+      <div>Conda创建和使用环境</div>
+      <div>http://example.com/2025/01/16/Conda/Conda基础-1/</div>
     </div>
     <div class="license-meta">
       
@@ -388,7 +355,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月25日</div>
+          <div>2025年1月16日</div>
         </div>
       
       
@@ -420,9 +387,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/27/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-2/" title="递归和分治">
+                      <a href="/2025/01/16/Node/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="npm长时间下载包失败">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">递归和分治</span>
+                        <span class="hidden-mobile">npm长时间下载包失败</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -430,8 +397,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/25/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2025/01/07/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-6/" title="分支限界法">
+                        <span class="hidden-mobile">分支限界法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
