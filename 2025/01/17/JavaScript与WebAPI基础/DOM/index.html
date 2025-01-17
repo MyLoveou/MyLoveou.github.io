@@ -19,16 +19,16 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTM">
+    <meta name="description" content="什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM">
 <meta property="og:url" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="一、什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTM">
+<meta property="og:description" content="什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTML">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/image-20250117214554142.png">
 <meta property="article:published_time" content="2025-01-17T13:27:52.000Z">
-<meta property="article:modified_time" content="2025-01-17T14:19:34.825Z">
+<meta property="article:modified_time" content="2025-01-17T14:21:58.712Z">
 <meta property="article:author" content="无人知我意">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/image-20250117214554142.png">
@@ -285,7 +285,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="一什么是dom">一、什么是DOM</h1>
+                <h1 id="什么是dom">什么是DOM</h1>
 <p>DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML
 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript
 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM
@@ -397,29 +397,27 @@ HTML 标签。</p>
 <li><p><strong>自定义属性</strong></p>
 <ul>
 <li><p>在HTML标签中使用”data-”作为开头，同时使用dataset获取自定义属性，获取到的是一个字典。</p>
-<p>```javascript &lt;!DOCTYPE html&gt;</p>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-<p>Document</p>
-</title>
-</head>
-<body>
-<div data-id="1">
-自定义属性
-</div>
-<script>
-        // 1. 获取元素
-        let div = document.querySelector('div')
-        // 2. 获取自定义属性值
-         console.log(div.dataset.id)
+<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"IE=edge"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
 
-    </script>
-<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
-</html></li>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+   <span class="token operator">&lt;</span>div data<span class="token operator">-</span>id<span class="token operator">=</span><span class="token string">"1"</span><span class="token operator">></span> 自定义属性 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token comment">// 1. 获取元素</span>
+        <span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+        <span class="token comment">// 2. 获取自定义属性值</span>
+         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+      
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
 </ul></li>
 <li><p><strong>事件处理</strong></p>
 <ul>
@@ -454,9 +452,9 @@ HTML 标签。</p>
 <li><code>blur</code>：失去焦点</li>
 </ul></li>
 </ul></li>
-<li><p>任意事件类型被触发时与事件相关的信息会被以对象的形式记录下来，我们称这个对象为事件对象。事件回调函数的【第1个参数】即所谓的事件对象，通常习惯性的将这个对数命名为
-<code>event</code>、<code>ev</code> 、<code>ev</code> 。</p>
-<p>接下来简单看一下事件对象中包含了哪些有用的信息：</p>
+<li><p>任意事件类型被触发时与事件相关的信息会被以对象的形式记录下来，我们称这个对象为事件对象。事件回调函数的【第1个参数】即所谓的事件对象，通常习惯性的将这个对象命名为
+<code>event</code>、<code>ev</code> 、<code>ev</code> 。</p></li>
+<li><p>这个对象包含的属性</p>
 <ol type="1">
 <li><code>ev.type</code> 当前事件的类型</li>
 <li><code>ev.clientX/Y</code> 光标相对浏览器窗口的位置</li>
@@ -890,5 +888,5 @@ HTML 标签。</p>
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
 </html>
