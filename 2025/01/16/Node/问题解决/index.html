@@ -19,12 +19,12 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate">
+    <meta name="description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： 1234npm error code CERT_HAS_EXPIREDnpm error errno CERT_HAS_EXPIREDnpm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate has expiredn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm长时间下载包失败">
 <meta property="og:url" content="http://example.com/2025/01/16/Node/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate">
+<meta property="og:description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： 1234npm error code CERT_HAS_EXPIREDnpm error errno CERT_HAS_EXPIREDnpm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate has expiredn">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-16T07:01:06.000Z">
 <meta property="article:modified_time" content="2025-01-16T14:25:07.652Z">
@@ -44,8 +44,6 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -232,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          121 字
+          112 字
         
       </span>
     
@@ -243,7 +241,7 @@
         
         
         
-          2 分钟
+          1 分钟
         
       </span>
     
@@ -288,24 +286,19 @@
                 <h1 id="node.js疑难解决">Node.js疑难解决</h1>
 <h2 id="一npm安装模块报错">一、npm安装模块报错</h2>
 <h3 id="问题描述">1、问题描述：</h3>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm error code CERT_HAS_EXPIRED
-npm error errno CERT_HAS_EXPIRED
-npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate has expired
-npm error A complete log of this run can be found in: D:\Software\Nodejs\node_cache\_logs\2025-01-16T06_54_38_642Z-debug-0.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gauss">npm <span class="hljs-built_in">error</span> <span class="hljs-built_in">code</span> CERT_HAS_EXPIRED<br>npm <span class="hljs-built_in">error</span> errno CERT_HAS_EXPIRED<br>npm <span class="hljs-built_in">error</span> request to https:<span class="hljs-comment">//registry.npm.taobao.org/yarn failed, reason: certificate has expired</span><br>npm <span class="hljs-built_in">error</span> A complete <span class="hljs-built_in">log</span> of this <span class="hljs-keyword">run</span> can be found in: D:\Software\Nodejs\node_cache\_logs\<span class="hljs-number">2025</span><span class="hljs-number">-01</span><span class="hljs-number">-16</span>T06_54_38_642Z-<span class="hljs-keyword">debug</span><span class="hljs-number">-0.</span><span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
 <p>npm 的证书失效了，它不再支持自签名证书</p>
 <h3 id="解决方案">2、解决方案</h3>
 <h4 id="升级npm">（1）升级npm</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm install -g npm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install -g <span class="hljs-built_in">npm</span><br></code></pre></td></tr></table></figure>
 <h4 id="清理缓存">（2）清理缓存</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm cache clean --force<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm cache clean <span class="hljs-comment">--force</span><br></code></pre></td></tr></table></figure>
 <h4 id="更换镜像源">（3）更换镜像源</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org
-npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">npm config set registry https:<span class="hljs-comment">//registry.npmjs.org</span><br>npm config set registry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br><br></code></pre></td></tr></table></figure>
 <h4 id="将https改成http">（4）将https改成http</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set registry http:&#x2F;&#x2F;registry.npmjs.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tcl">npm config <span class="hljs-keyword">set</span> <span class="hljs-keyword">registry</span> <span class="hljs-keyword">http</span>://<span class="hljs-keyword">registry</span>.npmjs.org<br></code></pre></td></tr></table></figure>
 <h4 id="取消ssl验证该方法降低网络安全性慎用">（5）取消ssl验证(该方法降低网络安全性，慎用)</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set strict-ssl false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm<span class="hljs-built_in"> config </span><span class="hljs-built_in">set</span> strict-ssl <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -611,8 +604,6 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
   });
 </script>
 
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
