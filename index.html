@@ -59,6 +59,12 @@
 
 
 
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -76,10 +82,10 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/backgroundize.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<body>
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
 
   <header>
@@ -226,18 +232,84 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/01/17/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" target="_self">
+          <img src="/img/%E5%B0%81%E9%9D%A2/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96.jpg" srcset="/img/loading.gif" lazyload alt="Fluid主题美化">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/01/16/hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" target="_self">
+        <a href="/2025/01/17/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" target="_self">
+          Fluid主题美化
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2025/01/17/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" target="_self">
+        <div>
+          一、美化原理  自定义美化的实现是借助Hexo的注入器功能实现的。我们可以在指定位置注入HTML代码，实现元素的增加和Javascript脚本的引入和执行。同时Fluid支持引入自定义JS和CSS文件。这样就可以将自定义的JS文件和CSS文件引入最终渲染的HTML页面中。 注入器文件：在主题目录下的script文件夹中新建JavaScript文件，写入自己的代码。在注入器中加入希望注入的代码
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-01-17 17:14" pubdate>
+              2025-01-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" target="_self">
+          <img src="/img/%E8%83%8C%E6%99%AF/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE.jpg" srcset="/img/loading.gif" lazyload alt="Fluid主题配置">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" target="_self">
           Fluid主题配置
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/01/16/hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" target="_self">
+      <a class="index-excerpt " href="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" target="_self">
         <div>
-          一、全局配置  名词解析  站点配置：Hexo 博客目录下的 _config.yml 主题配置：指的是 Hexo/theme/fluid/_config.yml 或者 _config.fluid.yml   Rd 1、覆盖配置 在博客目录下创建一个_config.fluid.yml 文件，同时将主题的 _config.yml全部配置（或部分配置）复制过去。 注意：只要存在
+          名词解析  站点配置：Hexo 博客目录下的 _config.yml 主题配置：指的是 Hexo/theme/fluid/_config.yml 或者 _config.fluid.yml   一、全局配置 1、覆盖配置 在博客目录下创建一个_config.fluid.yml 文件，同时将主题的 _config.yml全部配置（或部分配置）复制过去。 注意：只要存在于 _c
         </div>
       </a>
 
@@ -291,7 +363,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2025/01/16/Node/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_self">
         <div>
-          Node.js疑难解决 一、npm安装模块报错 1、问题描述： 1234npm error code CERT_HAS_EXPIREDnpm error errno CERT_HAS_EXPIREDnpm error request to https://registry.npm.taobao.org/yarn failed, reason: certificate has expiredn
+          Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate
         </div>
       </a>
 
@@ -354,7 +426,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2025/01/16/Conda/Conda%E5%9F%BA%E7%A1%80-1/" target="_self">
         <div>
-          Conda基础操作 1. conda环境查询 12conda info#当前环境配置查询conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  1conda create -n python313 python=3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python=3.13&quot;设
+          Conda基础操作 1. conda环境查询 conda info#当前环境配置查询 conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  conda create -n python313 python=3.13  #"python313"是我自定义的环境名称，"python=3.13"设置配置环境中python版本  激活并使
         </div>
       </a>
 
@@ -541,7 +613,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2025/01/04/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-4/" target="_self">
         <div>
-          贪心算法  什么是贪心算法？  在对问题求解时，总是做出在当前看来是最好的选择，就是贪心。不从整体上最优加以考虑，所做出的仅是在某种意义上的局部最优。 贪心算法不是对所有问题都能得到整体最优解，但对范围相当广泛的许多问题，它能产生==整体最优解或者是整体最优解的近似解==。 特点：多步判断、最优子结构性质、贪心选择性质  最优化问题  每个最优化问题包含一组限制条件和一个优化函
+          贪心算法  什么是贪心算法？  在对问题求解时，总是做出在当前看来是最好的选择，就是贪心。不从整体上最优加以考虑，所做出的仅是在某种意义上的局部最优。 贪心算法不是对所有问题都能得到整体最优解，但对范围相当广泛的许多问题，它能产生整体最优解或者是整体最优解的近似解。 特点：多步判断、最优子结构性质、贪心选择性质  最优化问题  每个最优化问题包含一组限制条件和一个优化函数
         </div>
       </a>
 
@@ -663,7 +735,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2024/12/27/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-2/" target="_self">
         <div>
-          递归与分治 一、递归 1、阶乘函数  递归基本思想：直接或间接调用自身的算法称为递归算法   阶乘函数  12345def factorial(n):    if n == 0:        return 1    else:        return n * factorial(n-1)  阶乘函数的尾递归版本  12345def factorial(n, acc=
+          递归与分治 一、递归 1、阶乘函数  递归基本思想：直接或间接调用自身的算法称为递归算法   阶乘函数  def factorial(n):     if n == 0:         return 1     else:         return n * factorial(n-1)  阶乘函数的尾递归版本  def factorial(n, acc=1):
         </div>
       </a>
 
@@ -773,40 +845,13 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/12/25/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/12/25/hello-world/" target="_self">
-        <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-12-25 12:48" pubdate>
-              2024-12-25
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
 
 
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 
@@ -913,6 +958,11 @@
 
 
 
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/star.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/containsWord.min.js"></script>
+
+
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
@@ -924,5 +974,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
 </html>

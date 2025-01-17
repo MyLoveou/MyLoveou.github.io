@@ -27,7 +27,7 @@
 <meta property="og:description" content="分支限界法  什么是分支限界法？  以广度优先或以最小耗费优先的方式搜索解空间树，利用最优解属性的上下界来控制搜索的分支，找出满足约束条件的一个解，或是在满足约束条件的解中找出在某种意义下的最优解。也是以树形结构（子集树或排列树）来组织解空间 分支限界的解空间比回溯法要大得多。内存有限时，使用回溯法更容易成功 常规思路：  在分支限界法中，每个活结点只有一次机会成为扩展节点。一旦成">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-07T12:51:24.000Z">
-<meta property="article:modified_time" content="2025-01-16T05:47:10.165Z">
+<meta property="article:modified_time" content="2025-01-17T03:39:58.334Z">
 <meta property="article:author" content="无人知我意">
 <meta property="article:tag" content="分支限界法">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,6 +43,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -68,6 +70,12 @@
 
 
 
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -85,10 +93,10 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/backgroundize.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<body>
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
 
   <header>
@@ -289,7 +297,7 @@
 <li>常见的分支限界法：
 <ul>
 <li>队列式分支限界法（FIFO）：按照队列先进先出原则选取下一个节点作为扩展节点</li>
-<li>优先队列式分支限界法：按照优先队列中规定的优先级选取优先级最高的节点成为当前扩展结点。==该方法最大收益、最小损耗==</li>
+<li>优先队列式分支限界法：按照优先队列中规定的优先级选取优先级最高的节点成为当前扩展结点。该方法最大收益、最小损耗</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -597,6 +605,8 @@
 </script>
 
 
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
   <script>Fluid.plugins.codeWidget();</script>
@@ -698,6 +708,11 @@
 
 
 
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/star.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/containsWord.min.js"></script>
+
+
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
@@ -709,5 +724,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
 </html>

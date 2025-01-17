@@ -19,12 +19,12 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Conda基础操作 1. conda环境查询 12conda info#当前环境配置查询conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  1conda create -n python313 python&#x3D;3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python&#x3D;3.13&quot;设">
+    <meta name="description" content="Conda基础操作 1. conda环境查询 conda info#当前环境配置查询 conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  conda create -n python313 python&#x3D;3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python&#x3D;3.13&quot;设置配置环境中python版本  激活并使">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Conda创建和使用环境">
 <meta property="og:url" content="http://example.com/2025/01/16/Conda/Conda%E5%9F%BA%E7%A1%80-1/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="Conda基础操作 1. conda环境查询 12conda info#当前环境配置查询conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  1conda create -n python313 python&#x3D;3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python&#x3D;3.13&quot;设">
+<meta property="og:description" content="Conda基础操作 1. conda环境查询 conda info#当前环境配置查询 conda info --env#查询conda安装的所有环境 2. conda创建环境  创建环境  conda create -n python313 python&#x3D;3.13  #&quot;python313&quot;是我自定义的环境名称，&quot;python&#x3D;3.13&quot;设置配置环境中python版本  激活并使">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-16T05:48:55.000Z">
 <meta property="article:modified_time" content="2025-01-16T14:25:31.880Z">
@@ -45,6 +45,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -70,6 +72,12 @@
 
 
 
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -87,10 +95,10 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/backgroundize.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<body>
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
 
   <header>
@@ -225,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          102 字
+          98 字
         
       </span>
     
@@ -280,18 +288,19 @@
                 
                 <h1 id="conda基础操作">Conda基础操作</h1>
 <h2 id="conda环境查询">1. conda环境查询</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">conda info<span class="hljs-comment">#当前环境配置查询</span><br>conda info --env<span class="hljs-comment">#查询conda安装的所有环境</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">conda info<span class="token comment">#当前环境配置查询</span>
+conda info <span class="token operator">-</span><span class="token operator">-</span>env<span class="token comment">#查询conda安装的所有环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 <h2 id="conda创建环境">2. conda创建环境</h2>
 <ol type="1">
 <li>创建环境</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">conda create -n python313 python=<span class="hljs-number">3.13</span>  <span class="hljs-comment">#&quot;python313&quot;是我自定义的环境名称，&quot;python=3.13&quot;设置配置环境中python版本</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">conda create <span class="token operator">-</span>n python313 python<span class="token operator">=</span><span class="token number">3.13</span>  <span class="token comment">#"python313"是我自定义的环境名称，"python=3.13"设置配置环境中python版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <ol start="2" type="1">
 <li>激活并使用所创建的环境</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">conda activate python313  <span class="hljs-comment">#“python313”是所要使用环境名称</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">conda activate python313  <span class="token comment">#“python313”是所要使用环境名称</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <ol start="3" type="1">
-<li>删除不需要的环境 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">conda remove -n python313 --<span class="hljs-built_in">all</span><br></code></pre></td></tr></table></figure></li>
+<li>删除不需要的环境 <figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">conda remove <span class="token operator">-</span>n python313 <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">all</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
 </ol>
 
                 
@@ -601,6 +610,8 @@
 </script>
 
 
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
   <script>Fluid.plugins.codeWidget();</script>
@@ -702,6 +713,11 @@
 
 
 
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/star.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/containsWord.min.js"></script>
+
+
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
@@ -713,5 +729,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
 </html>
