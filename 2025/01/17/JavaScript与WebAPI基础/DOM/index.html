@@ -19,25 +19,23 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="算法效率基础 算法分析是对算法需要多少计算时间和存储空间作定量的分析,因此算法的复杂性存在空间复杂性和时间复杂性两个方面。算法的复杂性是算法运行需要的计算机资源的量。 1. 影响算法复杂性的因素  要解的问题的规模：问题本身 算法的输入：要处理的数据 算法本身的函数：处理问题的方法  2. 元运算  对任何计算步骤，他的代价总是一个时间常量为上界，不管数据输入或执行的算法，我们">
+    <meta name="description" content="一、什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法效率分析">
-<meta property="og:url" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/index.html">
+<meta property="og:title" content="DOM">
+<meta property="og:url" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="算法效率基础 算法分析是对算法需要多少计算时间和存储空间作定量的分析,因此算法的复杂性存在空间复杂性和时间复杂性两个方面。算法的复杂性是算法运行需要的计算机资源的量。 1. 影响算法复杂性的因素  要解的问题的规模：问题本身 算法的输入：要处理的数据 算法本身的函数：处理问题的方法  2. 元运算  对任何计算步骤，他的代价总是一个时间常量为上界，不管数据输入或执行的算法，我们">
+<meta property="og:description" content="一、什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTM">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image.png">
-<meta property="og:image" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image-20250107223852554.png">
-<meta property="article:published_time" content="2024-12-25T04:53:14.000Z">
-<meta property="article:modified_time" content="2025-01-16T05:46:42.626Z">
+<meta property="og:image" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/image-20250117214554142.png">
+<meta property="article:published_time" content="2025-01-17T13:27:52.000Z">
+<meta property="article:modified_time" content="2025-01-17T14:19:34.825Z">
 <meta property="article:author" content="无人知我意">
-<meta property="article:tag" content="算法效率分析">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image.png">
+<meta name="twitter:image" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/image-20250117214554142.png">
   
   
   
-  <title>算法效率分析 - 我的世界</title>
+  <title>DOM - 我的世界</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="算法效率分析"></span>
+            <span id="subtitle" data-typed-text="DOM"></span>
           
         </div>
 
@@ -222,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-25 12:53" pubdate>
-          2024年12月25日 下午
+        <time datetime="2025-01-17 21:27" pubdate>
+          2025年1月17日 晚上
         </time>
       </span>
     
@@ -234,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          836 字
+          1.5k 字
         
       </span>
     
@@ -245,7 +243,7 @@
         
         
         
-          7 分钟
+          13 分钟
         
       </span>
     
@@ -282,62 +280,200 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">算法效率分析</h1>
+            <h1 id="seo-header">DOM</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="算法效率基础">算法效率基础</h1>
-<p><strong>算法分析是对算法需要多少计算时间和存储空间作定量的分析,因此算法的复杂性存在空间复杂性和时间复杂性两个方面。算法的复杂性是算法运行需要的计算机资源的量。</strong></p>
-<h2 id="影响算法复杂性的因素">1. 影响算法复杂性的因素</h2>
-<ol type="1">
-<li>要解的问题的规模：问题本身</li>
-<li>算法的输入：要处理的数据</li>
-<li>算法本身的函数：处理问题的方法</li>
-</ol>
-<h2 id="元运算">2. 元运算</h2>
-<blockquote>
-<p>对任何计算步骤，他的代价总是一个时间常量为上界，不管数据输入或执行的算法，我们称该步骤为“元运算”。通俗讲就是时间固定</p>
-</blockquote>
-<blockquote>
-<p>举例：访问数组中的一个元素就是一个“元运算”，因为不管你的数组有多大，访问任何一个特定位置的元素所需的时间都是相同的，这个时间是一个常数，不会随着数组大小的变化而变化。</p>
-</blockquote>
-<h2 id="如何度量运行时间即算法的时间复杂度">3.
-如何度量运行时间（即算法的时间复杂度）</h2>
-<blockquote>
-<p>用算法的基本操作的执行次数来度量算法的时间效率</p>
-</blockquote>
-<blockquote>
-<p>所谓的基本操作，就是指算法中最基本的操作，比如：赋值、比较、输入输出等。</p>
-</blockquote>
-<h2 id="算法复杂性符号表示">4. 算法复杂性符号表示</h2>
-<ol type="1">
-<li>Θ：是渐进紧确界记号，当且仅当<span class="math inline">\(\lim\limits_{n\rightarrow\infty}\frac{f(n)}{g(n)}\)</span>存在并等于一个常数，那么f(n)=Θ(g(n))。也就是f(n)和g(n)同阶。</li>
-<li>O：是渐进上界记号，当存在正整数c和<span class="math inline">\(n_0\)</span>，使得当n&gt;=<span class="math inline">\(n_0\)</span>时，f(n)&lt;=cg(n)。则f(n)的渐进上界是g(n),<span class="math inline">\(f(n)=O(g(n))\)</span>。通俗说当n在一定范围内时，函数f(n)的阶不高于函数g(n)。g(n)的阶越低越精确。</li>
-<li>Ω：是渐进下界记号，当存在正整数c和<span class="math inline">\(n_0\)</span>，使得当n&gt;=<span class="math inline">\(n_0\)</span>时，f(n)&gt;=cg(n)。则f(n)的渐进下界是g(n),<span class="math inline">\(f(n)=Ω(g(n))\)</span>。通俗说当n在一定范围内时，函数f(n)的阶不低于函数g(n)。g(n)的阶越高越精确。
-<img src="/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image.png" srcset="/img/loading.gif" lazyload alt="'图片1'" style="zoom:67%;">
-## 5. 如何分析非递归算法效率</li>
-<li>找出算法的基本操作</li>
-<li>检查基本操作的执行次数是否只依赖输入规模</li>
-<li>建立一个算法基本操作执行次数的求和表达式 ## 6.
-如何分析递归算法效率</li>
-<li>找出递归的边界条件,一般而言递归的边界条件是n=1，而且是进行切半的操作。
-<span class="math display">\[T(n)=\begin{cases}O(1),&amp;\text{n=1}\\kT(n/2)+O(1),&amp;\text{n&gt;1}\end{cases}\]</span></li>
-<li>分析递归式的解法</li>
-<li>计算递归式的解法的执行次数</li>
-<li>建立递归式的解法的执行次数的求和表达式
-（注：递归算法代码简洁，但是效率低下） ## 7. 主定理解决递归效率问题</li>
-</ol>
+                <h1 id="一什么是dom">一、什么是DOM</h1>
+<p>DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML
+文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript
+等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM
+的详细介绍：</p>
+<h2 id="dom-的结构">DOM 的结构</h2>
 <ul>
-<li>主定理提供一个通用的方法来解决形如<span class="math inline">\(T(n)=aT(n/b)+f(n)\)</span>的递归式的效率问题。</li>
+<li><p><strong>节点（Node）</strong></p>
+<ul>
+<li><strong>元素节点（Element Node）</strong>：对应于 HTML 或 XML
+文档中的元素，如 <code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>
+等。元素节点是 DOM
+树的主要组成部分，可以包含其他元素节点、文本节点等。</li>
+<li><strong>属性节点（Attribute Node）</strong>：定义了元素的属性，如
+<code>&lt;img src="image.jpg"&gt;</code> 中的 <code>src</code>
+就是一个属性节点。不过在 DOM
+中，属性通常被视为元素节点的一部分，而不是独立的节点。</li>
+<li><strong>文本节点（Text Node）</strong>：包含元素的文本内容。例如在
+<code>&lt;p&gt;Hello, world!&lt;/p&gt;</code> 中，“Hello, world!”
+就是一个文本节点。</li>
+<li><strong>注释节点（Comment Node）</strong>：对应于文档中的注释，如
+<code>&lt;!-- 这是一个注释 --&gt;</code>。</li>
+<li><strong>文档节点（Document Node）</strong>：是 DOM
+树的根节点，代表整个文档。在 JavaScript 中，可以通过
+<code>document</code> 对象来访问文档节点。</li>
+</ul></li>
+<li><p><strong>DOM 树（DOM Tree）</strong></p>
+<ul>
+<li><p>DOM
+将文档表示为一个倒立的树形结构，其中每个节点都是树的一个组成部分。文档节点是树的根节点，其他节点如元素节点、文本节点等通过父子、兄弟等关系相互连接。例如对于以下
+HTML 结构：</p>
+<p>HTML复制</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>欢迎<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>这是一个段落。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>其对应的 DOM 树大致如下：</p>
+<p>复制</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">document
+├── html
+│   ├── head
+│   │   └── title
+│   │       └── 文本节点（标题）
+│   └── body
+│       ├── h1
+│       │   └── 文本节点（欢迎）
+│       └── p
+│           └── 文本节点（这是一个段落。）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+</ul></li>
 </ul>
+<h2 id="dom-的操作">DOM 的操作</h2>
+<ul>
+<li><p><strong>访问元素</strong></p>
+<ul>
+<li><strong>通过 ID
+获取元素</strong>：<code>document.getElementById('elementId')</code>，返回具有指定
+ID 的元素。</li>
+<li><strong>通过类名获取元素</strong>：<code>document.getElementsByClassName('className')</code>，返回一个包含所有具有指定类名的元素的
+HTMLCollection 对象。</li>
+<li><strong>通过标签名获取元素</strong>：<code>document.getElementsByTagName('tagName')</code>，返回一个包含所有具有指定标签名的元素的
+HTMLCollection 对象。</li>
+<li><strong>通过选择器获取元素</strong>：<code>document.querySelector('.className')</code>
+或 <code>document.querySelector('#elementId')</code>
+等，返回文档中匹配指定选择器的第一个元素；<code>document.querySelectorAll('.className')</code>
+等，返回一个包含所有匹配指定选择器的元素的 NodeList 对象。</li>
+</ul></li>
+<li><p><strong>创建元素</strong></p>
+<ul>
+<li><code>document.createElement('tagName')</code>：创建一个指定标签名的新元素。</li>
+<li><code>document.createTextNode('text')</code>：创建一个包含指定文本的新文本节点。</li>
+</ul></li>
+<li><p><strong>插入元素</strong></p>
+<ul>
+<li><code>element.appendChild(child)</code>：将一个子元素添加到指定元素的末尾。</li>
+<li><code>element.insertBefore(newElement, referenceElement)</code>：将新元素插入到指定元素的
+referenceElement 子元素之前。</li>
+</ul></li>
+<li><p><strong>删除元素</strong></p>
+<ul>
+<li><code>element.removeChild(child)</code>：从指定元素中删除一个子元素。</li>
+</ul></li>
+<li><p><strong>修改元素</strong></p>
+<ul>
+<li><p>修改元素的属性：<code>element.setAttribute('attributeName', 'value')</code>。</p></li>
+<li><p>修改元素属性：<code>element.className = '其他CSS选择器'</code>，覆盖原有属性类名</p>
+<ul>
+<li>可以使用<code>classlist</code>操纵CSS
+<ul>
+<li><code>element.classlist.add('其他CSS选择器')</code>：追加</li>
+<li><code>element.classlist.remove('其他CSS选择器')</code>：删除</li>
+<li><code>element.classlist。toggle('其他CSS选择器')</code>：切换，如果有这个属性，就删除，反之，则添加</li>
+</ul></li>
+</ul></li>
+<li><p>修改元素的内容：<code>element.innerHTML = '新的内容'</code> 或
+<code>element.textContent = '新的内容'</code>。</p>
+<ul>
+<li><p><code>innerHTML</code> 属性用于获取或设置元素的 HTML
+内容，它会解析内容中的 HTML
+标签。当使用这个属性输出DOM对象的内容是，会将HTML标签也进行输出</p></li>
+<li><p>与<code>innerHTML</code>属性不同，<code>innerText</code>属性用于获取或设置元素的文本内容，它不会解析内容中的
+HTML 标签。</p>
+<p><img src="/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/image-20250117214554142.png" srcset="/img/loading.gif" lazyload alt="image-20250117214554142" style="zoom:50%;"></p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>自定义属性</strong></p>
+<ul>
+<li><p>在HTML标签中使用”data-”作为开头，同时使用dataset获取自定义属性，获取到的是一个字典。</p>
+<p>```javascript &lt;!DOCTYPE html&gt;</p>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+<p>Document</p>
+</title>
+</head>
+<body>
+<div data-id="1">
+自定义属性
+</div>
+<script>
+        // 1. 获取元素
+        let div = document.querySelector('div')
+        // 2. 获取自定义属性值
+         console.log(div.dataset.id)
+
+    </script>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
+</html></li>
+</ul></li>
+<li><p><strong>事件处理</strong></p>
+<ul>
+<li><p><strong>添加事件监听器</strong>：<code>element.addEventListener(eventclass, function,yesOrno)</code>，为元素添加一个事件监听器，当指定事件发生时，执行回调函数。</p>
+<ul>
+<li><code>eventclass</code>：事件类型</li>
+<li><code>function</code>：要执行的函数</li>
+<li><code>yesOrno</code>：是否进行捕获，默认为true</li>
+</ul></li>
+<li><p><strong>移除事件监听器</strong>：<code>element.removeEventListener('eventName', function)</code>，移除元素上之前添加的事件监听器。</p></li>
+<li><p>事件类型</p>
+<ul>
+<li>鼠标事件
+<ul>
+<li><code>mouseenter</code>：鼠标是否移入该DOM对象</li>
+<li><code>mouseleave</code>：鼠标是否移出该DOM对象</li>
+<li><code>click</code>：鼠标单击</li>
+<li><code>dbclick</code>：鼠标双击</li>
+</ul></li>
+<li>键盘事件
+<ul>
+<li><code>keydown</code>：键盘按下</li>
+<li><code>keyup</code>：键盘抬起</li>
+</ul></li>
+<li>表单事件
+<ul>
+<li><code>input</code>：文本框输入</li>
+</ul></li>
+<li>焦点事件
+<ul>
+<li><code>focus</code>：获得焦点</li>
+<li><code>blur</code>：失去焦点</li>
+</ul></li>
+</ul></li>
+<li><p>任意事件类型被触发时与事件相关的信息会被以对象的形式记录下来，我们称这个对象为事件对象。事件回调函数的【第1个参数】即所谓的事件对象，通常习惯性的将这个对数命名为
+<code>event</code>、<code>ev</code> 、<code>ev</code> 。</p>
+<p>接下来简单看一下事件对象中包含了哪些有用的信息：</p>
 <ol type="1">
-<li>n：是问题的规模</li>
-<li>a：是原问题的子问题个数</li>
-<li><span class="math inline">\(\frac{n}{b}\)</span>：是子问题的规模大小</li>
-<li>f(n)：是将原问题分解成子问题和将子问题的解合并成原问题的解的时间
-<img src="/2024/12/25/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-1/image-20250107223852554.png" srcset="/img/loading.gif" lazyload alt="image-20250107223852554" style="zoom:50%;"></li>
-</ol>
+<li><code>ev.type</code> 当前事件的类型</li>
+<li><code>ev.clientX/Y</code> 光标相对浏览器窗口的位置</li>
+<li><code>ev.offsetX/Y</code> 光标相于当前 DOM 元素的位置</li>
+</ol></li>
+</ul></li>
+</ul>
+<h2 id="dom-的应用">DOM 的应用</h2>
+<ul>
+<li><strong>页面交互</strong>：通过 DOM
+操作，可以实现各种页面交互效果，如点击按钮显示隐藏内容、输入框内容验证、拖拽元素等。</li>
+<li><strong>动态内容更新</strong>：根据用户操作或数据变化，动态地创建、修改或删除页面元素，从而更新页面内容，无需重新加载整个页面。</li>
+<li><strong>与 CSS 交互</strong>：可以使用 DOM
+来获取或修改元素的样式，实现动态的样式效果，如改变元素的颜色、大小、位置等。</li>
+<li><strong>数据可视化</strong>：结合数据和 DOM
+操作，可以生成各种图表、图形等数据可视化内容，为用户提供更直观的信息展示。</li>
+</ul>
 
                 
               </div>
@@ -356,7 +492,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  <a href="/categories/JavaScript%E4%B8%8EWeb-API/" class="category-chain-item">JavaScript与Web API</a>
   
   
 
@@ -368,13 +504,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90/" class="print-no-link">#算法效率分析</a>
-      
-    </div>
-  
 </div>
 
 
@@ -383,8 +512,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>算法效率分析</div>
-      <div>http://example.com/2024/12/25/算法/计算机算法-1/</div>
+      <div>DOM</div>
+      <div>http://example.com/2025/01/17/JavaScript与WebAPI基础/DOM/</div>
     </div>
     <div class="license-meta">
       
@@ -396,7 +525,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月25日</div>
+          <div>2025年1月17日</div>
         </div>
       
       
@@ -428,9 +557,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/27/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95-2/" title="递归和分治">
+                      <a href="/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/%E4%BA%8B%E4%BB%B6%E6%B5%81/" title="事件流">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">递归和分治</span>
+                        <span class="hidden-mobile">事件流</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -438,8 +567,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/25/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/" title="输入和输出">
+                        <span class="hidden-mobile">输入和输出</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -761,5 +890,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
+</body>
 </html>

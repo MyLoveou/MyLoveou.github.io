@@ -45,6 +45,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -230,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          858 字
+          790 字
         
       </span>
     
@@ -241,7 +243,7 @@
         
         
         
-          8 分钟
+          7 分钟
         
       </span>
     
@@ -308,7 +310,11 @@
 <p><img src="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/image-20250116220823841.png" srcset="/img/loading.gif" lazyload alt="image-20250116220823841" style="zoom:50%;"></p>
 <h2 id="导航菜单">4、导航菜单</h2>
 <p>在主题配置的<code>menu</code>属性中进行设置，</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">navbar:</span><br>  <span class="hljs-attr">menu:</span><br>    <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&#x27;home&#x27;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&#x27;iconfont icon-home-fill&#x27;</span> &#125;<br>    <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&#x27;tag&#x27;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&#x27;/tags/&#x27;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&#x27;iconfont icon-tags-fill&#x27;</span> &#125;<br>    <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&#x27;about&#x27;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&#x27;/about/&#x27;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&#x27;iconfont icon-user-fill&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;联系我&#x27;</span> &#125;<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">navbar</span><span class="token punctuation">:</span>
+  <span class="token key atrule">menu</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'iconfont icon-home-fill'</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">'tag'</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">'/tags/'</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'iconfont icon-tags-fill'</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">'about'</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">'/about/'</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'iconfont icon-user-fill'</span><span class="token punctuation">,</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">'联系我'</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <ul>
 <li>key:用于关联有语言配置，如不存在关联则显示 key 本身的值</li>
 <li>link:跳转链接</li>
@@ -316,7 +322,18 @@
 <li>name：强制使用此名称显示（不再按语言配置显示），可省略</li>
 </ul>
 <p>导航栏二级菜单</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">menu:</span><br>  <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;home&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-home-fill&quot;</span> &#125;<br>  <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;archive&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/archives/&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-archive-fill&quot;</span> &#125;<br>  <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;category&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/categories/&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-category-fill&quot;</span> &#125;<br>  <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;tag&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/tags/&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-tags-fill&quot;</span> &#125;<br>  <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;about&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/about/&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-user-fill&quot;</span>, <span class="hljs-attr">submenu:</span> [<br><br>    &#123;<span class="hljs-attr">key:</span> <span class="hljs-string">&quot;理想&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/&quot;</span>&#125;,<br>    &#123;<span class="hljs-attr">key:</span> <span class="hljs-string">&quot;现实&quot;</span>,<span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/&quot;</span>&#125;<br><br>  ]<span class="hljs-comment">#二级菜单</span><br>  &#125;<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">menu</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"home"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">"iconfont icon-home-fill"</span> <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"archive"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/archives/"</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">"iconfont icon-archive-fill"</span> <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/categories/"</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">"iconfont icon-category-fill"</span> <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"tag"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/tags/"</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">"iconfont icon-tags-fill"</span> <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"about"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/about/"</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">"iconfont icon-user-fill"</span><span class="token punctuation">,</span> <span class="token key atrule">submenu</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+
+    <span class="token punctuation">&#123;</span><span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"理想"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/"</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span><span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"现实"</span><span class="token punctuation">,</span><span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"/"</span><span class="token punctuation">&#125;</span>
+
+  <span class="token punctuation">]</span><span class="token comment">#二级菜单</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <p><img src="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/image-20250116221718664.png" srcset="/img/loading.gif" lazyload alt="image-20250116221718664" style="zoom:50%;"></p>
 <h1 id="二文章页配置">二、文章页配置</h1>
 <h2 id="文章页顶部大图">1、文章页顶部大图</h2>
@@ -325,12 +342,20 @@
 <blockquote>
 <p>默认效果修改：在主题配置中的<code>post.banner_img</code>属性中进行修改</p>
 </blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">title:</span> <span class="hljs-string">Fluid主题配置</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2025-01-16 21:05:45</span><br><span class="hljs-attr">category:</span><br><span class="hljs-attr">banner_img:</span> <span class="hljs-string">/img/image-20250116220823841.png</span><br><span class="hljs-attr">tags:</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Fluid主题配置
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2025-01-16 21:05:45</span>
+<span class="token key atrule">category</span><span class="token punctuation">:</span>
+<span class="token key atrule">banner_img</span><span class="token punctuation">:</span> /img/image<span class="token punctuation">-</span>20250116220823841.png
+tags<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <p>配置效果如下：</p>
 <p><img src="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/image-20250116223538262.png" srcset="/img/loading.gif" lazyload alt="image-20250116223538262" style="zoom:50%;"></p>
 <h2 id="文章封面">2、文章封面</h2>
 <p>在该文章的yml语言块中添加<code>index_img</code>属性，图片存放地址同上</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">title:</span> <span class="hljs-string">Fluid主题配置</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2025-01-16 21:05:45</span><br><span class="hljs-attr">category:</span> <span class="hljs-string">Hexo</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-attr">index_img:</span> <span class="hljs-string">/img/封面.jpg</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Fluid主题配置
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2025-01-16 21:05:45</span>
+<span class="token key atrule">category</span><span class="token punctuation">:</span> Hexo
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token key atrule">index_img</span><span class="token punctuation">:</span> /img/封面.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 <blockquote>
 <p>默认效果修改：在主题配置中的<code>default_index_img</code>属性中进行修改</p>
 </blockquote>
@@ -342,14 +367,16 @@
 <ul>
 <li>markdown语法使用（前面可以存在缩进）</li>
 </ul>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note success %&#125;
+文字 或者 <span class="token code-snippet code keyword">`markdown`</span> 均可
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 <div class="note note-success">
             <p>文字 或者 <code>markdown</code> 均可</p>
           </div>
 <ul>
 <li>HTML语法使用</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>//注意标签所在行不能存在缩进<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>note note-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>标签<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>//注意标签所在行不能存在缩进<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <p>便签示例：</p>
 <p class="note note-primary">
 这是一个无意义的标签
@@ -370,12 +397,12 @@
 <ul>
 <li>markdown语法使用</li>
 </ul>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% label primary @text %&#125;<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label primary @text %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <span class="label label-primary">无意义标签</span>
 <ul>
 <li>HTML语法使用</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label label-primary&quot;</span>&gt;</span>无意义标签<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>label label-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>无意义标签<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 <p><span class="label label-primary">无意义标签</span></p>
 <ul>
 <li>可选标签
@@ -389,7 +416,9 @@
 </ul></li>
 </ul>
 <h3 id="折叠快">3. 折叠快</h3>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold info @title %&#125;
+需要折叠的一段内容，支持 markdown
+&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 
     <div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-57aa7659" role="button" aria-expanded="false" aria-controls="collapse-57aa7659">
@@ -697,6 +726,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
