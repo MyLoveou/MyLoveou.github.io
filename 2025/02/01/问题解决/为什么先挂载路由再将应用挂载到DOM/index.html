@@ -19,23 +19,23 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate">
+    <meta name="description" content="在Vue.js项目中，先挂载路由（app.use(router)）再挂载应用到DOM（app.mount(&#39;#app&#39;)）是为了确保在应用挂载到DOM之前，路由系统已经被正确初始化和配置。 具体来说，路由系统需要在应用挂载之前被设置好，这样当应用挂载到DOM时，路由系统可以立即响应URL的变化，并根据路由配置渲染相应的组件。如果先挂载应用，而路由系统尚未初始化或挂载，可能会导致初始路由解析失败，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm长时间下载包失败">
-<meta property="og:url" content="http://example.com/2025/01/16/Node/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
+<meta property="og:title" content="为什么先挂载路由再将应用挂载到DOM">
+<meta property="og:url" content="http://example.com/2025/02/01/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%88%E6%8C%82%E8%BD%BD%E8%B7%AF%E7%94%B1%E5%86%8D%E5%B0%86%E5%BA%94%E7%94%A8%E6%8C%82%E8%BD%BD%E5%88%B0DOM/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate">
+<meta property="og:description" content="在Vue.js项目中，先挂载路由（app.use(router)）再挂载应用到DOM（app.mount(&#39;#app&#39;)）是为了确保在应用挂载到DOM之前，路由系统已经被正确初始化和配置。 具体来说，路由系统需要在应用挂载之前被设置好，这样当应用挂载到DOM时，路由系统可以立即响应URL的变化，并根据路由配置渲染相应的组件。如果先挂载应用，而路由系统尚未初始化或挂载，可能会导致初始路由解析失败，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-16T07:01:06.000Z">
-<meta property="article:modified_time" content="2025-01-16T14:25:07.652Z">
+<meta property="article:published_time" content="2025-02-01T14:18:28.000Z">
+<meta property="article:modified_time" content="2025-02-01T14:24:01.031Z">
 <meta property="article:author" content="无人知我意">
-<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="前端">
 <meta property="article:tag" content="疑难解决">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>npm长时间下载包失败 - 我的世界</title>
+  <title>为什么先挂载路由再将应用挂载到DOM - 我的世界</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="npm长时间下载包失败"></span>
+            <span id="subtitle" data-typed-text="为什么先挂载路由再将应用挂载到DOM"></span>
           
         </div>
 
@@ -220,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-16 15:01" pubdate>
-          2025年1月16日 下午
+        <time datetime="2025-02-01 22:18" pubdate>
+          2025年2月1日 晚上
         </time>
       </span>
     
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          121 字
+          261 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -280,32 +280,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">npm长时间下载包失败</h1>
+            <h1 id="seo-header">为什么先挂载路由再将应用挂载到DOM</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="node.js疑难解决">Node.js疑难解决</h1>
-<h2 id="一npm安装模块报错">一、npm安装模块报错</h2>
-<h3 id="问题描述">1、问题描述：</h3>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm error code CERT_HAS_EXPIRED
-npm error errno CERT_HAS_EXPIRED
-npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate has expired
-npm error A complete log of this run can be found in: D:\Software\Nodejs\node_cache\_logs\2025-01-16T06_54_38_642Z-debug-0.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<p>npm 的证书失效了，它不再支持自签名证书</p>
-<h3 id="解决方案">2、解决方案</h3>
-<h4 id="升级npm">（1）升级npm</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm install -g npm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h4 id="清理缓存">（2）清理缓存</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm cache clean --force<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h4 id="更换镜像源">（3）更换镜像源</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org
-npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
-<h4 id="将https改成http">（4）将https改成http</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set registry http:&#x2F;&#x2F;registry.npmjs.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
-<h4 id="取消ssl验证该方法降低网络安全性慎用">（5）取消ssl验证(该方法降低网络安全性，慎用)</h4>
-<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set strict-ssl false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+                <p>在Vue.js项目中，先挂载路由（<code>app.use(router)</code>）再挂载应用到DOM（<code>app.mount('#app')</code>）是为了确保在应用挂载到DOM之前，路由系统已经被正确初始化和配置。</p>
+<p>具体来说，路由系统需要在应用挂载之前被设置好，这样当应用挂载到DOM时，路由系统可以立即响应URL的变化，并根据路由配置渲染相应的组件。如果先挂载应用，而路由系统尚未初始化或挂载，可能会导致初始路由解析失败，或者在路由变化时无法正确地导航到目标页面。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+
+<span class="token comment">// 路由挂载</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p><code>app.use(router)</code>这行代码的作用是将路由插件添加到Vue应用中，使其能够识别和响应路由的变化。只有在完成这一步之后，<code>app.mount('#app')</code>才能将应用挂载到指定的DOM元素上，并且能够根据当前URL显示正确的路由组件。</p>
 
                 
               </div>
@@ -324,7 +312,7 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
     
       <span class="category-chain">
         
-  <a href="/categories/Node-js/" class="category-chain-item">Node.js</a>
+  <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="category-chain-item">问题解决</a>
   
   
 
@@ -339,7 +327,7 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Node-js/" class="print-no-link">#Node.js</a>
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
       
         <a href="/tags/%E7%96%91%E9%9A%BE%E8%A7%A3%E5%86%B3/" class="print-no-link">#疑难解决</a>
       
@@ -353,8 +341,8 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>npm长时间下载包失败</div>
-      <div>http://example.com/2025/01/16/Node/问题解决/</div>
+      <div>为什么先挂载路由再将应用挂载到DOM</div>
+      <div>http://example.com/2025/02/01/问题解决/为什么先挂载路由再将应用挂载到DOM/</div>
     </div>
     <div class="license-meta">
       
@@ -366,7 +354,7 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月16日</div>
+          <div>2025年2月1日</div>
         </div>
       
       
@@ -398,18 +386,12 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" title="Fluid主题配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Fluid主题配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/16/Conda/Conda%E5%9F%BA%E7%A1%80-1/" title="Conda创建和使用环境">
-                        <span class="hidden-mobile">Conda创建和使用环境</span>
+                      <a href="/2025/01/18/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/BOM/" title="BOM">
+                        <span class="hidden-mobile">BOM</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

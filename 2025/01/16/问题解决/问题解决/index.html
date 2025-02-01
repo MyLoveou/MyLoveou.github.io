@@ -19,23 +19,23 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、事件流  什么是事件流 事件流是对事件执行过程的描述。事件则是指文档或浏览器窗口中发生的一项特定交互的瞬间。    image-20250118144642232   任意事件被触发都会经历两个阶段，捕获阶段、目标阶段、冒泡阶段  捕获阶段：事件顺着DOM树从上到下进行寻找，直到找到对应元素，由父传子  在捕获阶段，不会对路径上的其他节点元素执行处理函数  目标">
+    <meta name="description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件流">
-<meta property="og:url" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/%E4%BA%8B%E4%BB%B6%E6%B5%81/index.html">
+<meta property="og:title" content="npm长时间下载包失败">
+<meta property="og:url" content="http://example.com/2025/01/16/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="一、事件流  什么是事件流 事件流是对事件执行过程的描述。事件则是指文档或浏览器窗口中发生的一项特定交互的瞬间。    image-20250118144642232   任意事件被触发都会经历两个阶段，捕获阶段、目标阶段、冒泡阶段  捕获阶段：事件顺着DOM树从上到下进行寻找，直到找到对应元素，由父传子  在捕获阶段，不会对路径上的其他节点元素执行处理函数  目标">
+<meta property="og:description" content="Node.js疑难解决 一、npm安装模块报错 1、问题描述： npm error code CERT_HAS_EXPIRED npm error errno CERT_HAS_EXPIRED npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/%E4%BA%8B%E4%BB%B6%E6%B5%81/image-20250118144642232.png">
-<meta property="article:published_time" content="2025-01-17T14:18:50.000Z">
-<meta property="article:modified_time" content="2025-01-18T07:16:09.483Z">
+<meta property="article:published_time" content="2025-01-16T07:01:06.000Z">
+<meta property="article:modified_time" content="2025-02-01T14:20:17.366Z">
 <meta property="article:author" content="无人知我意">
+<meta property="article:tag" content="疑难解决">
+<meta property="article:tag" content="Node.js">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/%E4%BA%8B%E4%BB%B6%E6%B5%81/image-20250118144642232.png">
   
   
   
-  <title>事件流 - 我的世界</title>
+  <title>npm长时间下载包失败 - 我的世界</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="事件流"></span>
+            <span id="subtitle" data-typed-text="npm长时间下载包失败"></span>
           
         </div>
 
@@ -220,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-17 22:18" pubdate>
-          2025年1月17日 晚上
+        <time datetime="2025-01-16 15:01" pubdate>
+          2025年1月16日 下午
         </time>
       </span>
     
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          994 字
+          121 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          9 分钟
+          2 分钟
         
       </span>
     
@@ -280,127 +280,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">事件流</h1>
+            <h1 id="seo-header">npm长时间下载包失败</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="一事件流">一、事件流</h1>
-<blockquote>
-<p><strong>什么是事件流</strong></p>
-<p>事件流是对事件执行过程的描述。事件则是指文档或浏览器窗口中发生的一项特定交互的瞬间。</p>
-</blockquote>
-<figure>
-<img src="/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/%E4%BA%8B%E4%BB%B6%E6%B5%81/image-20250118144642232.png" srcset="/img/loading.gif" lazyload alt="image-20250118144642232">
-<figcaption aria-hidden="true">image-20250118144642232</figcaption>
-</figure>
-<ul>
-<li>任意事件被触发都会经历两个阶段，捕获阶段、目标阶段、冒泡阶段
-<ul>
-<li>捕获阶段：事件顺着DOM树从上到下进行寻找，直到找到对应元素，由父传子
-<ul>
-<li>在捕获阶段，不会对路径上的其他节点元素执行处理函数</li>
-</ul></li>
-<li>目标阶段：对目标元素执行处理函数</li>
-<li>冒泡阶段：事件从目标元素开始冒泡，从子向父，冒泡路径上的所有节点都会触发相应处理函数</li>
-</ul></li>
-<li>当某个元素的事件被触发时，事件总是会先经过其祖先才能到达当前元素，然后再由当前元素向祖先传递，事件在流动的过程中遇到相同的事件便会被触发。</li>
-<li>事件相继触发的【执行顺序】，事件的执行顺序是可控制的，即可以在捕获阶段被执行，也可以在冒泡阶段被执行。
-<ul>
-<li>冒泡模式，它会先执行子盒子事件再去执行父盒子事件</li>
-<li>捕获模式，它会先执行父盒子事件再去执行子盒子事件</li>
-</ul></li>
-<li><code>addEventListener</code>
-第3个参数决定了事件是在捕获阶段触发还是在冒泡阶段触发，第3个参数为
-<code>true</code> 表示捕获阶段触发，<code>false</code>
-表示冒泡阶段触发，默认值为 <code>false</code>
-<ul>
-<li>绝大部分都采用默认的冒泡模式</li>
-<li>同时事件流只会在父子元素具有相同事件类型时才会产生影响</li>
-</ul></li>
-</ul>
-<h1 id="二阻止冒泡">二、阻止冒泡</h1>
-<blockquote>
-<p>阻断事件的流动，保证只有当前元素被执行，不影响其祖先元素。</p>
-</blockquote>
-<ul>
-<li><p>使用事件对象中的<code>ev.stopPropagation</code>
-方法，专门用来阻止事件冒泡。</p></li>
-<li><p>使用案例</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 内层的盒子</span>
-    child<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'child...'</span><span class="token punctuation">)</span>
-
-      <span class="token comment">// 借助事件对象，阻止事件向上冒泡</span>
-      ev<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<ul>
-<li>注意，实在内层盒子中阻止事件冒泡</li>
-</ul></li>
-<li><p>对于鼠标事件</p>
-<ul>
-<li><code>mouseover</code> 和 <code>mouseout</code> 会有冒泡效果</li>
-<li><code>mouseenter</code> 和 <code>mouseleave</code> 没有冒泡效果
-(推荐)</li>
-</ul></li>
-</ul>
-<h1 id="三事件委托">三、事件委托</h1>
-<blockquote>
-<p>事件委托是利用事件流的特征解决一些现实开发需求的知识技巧，主要的作用是提升程序效率。</p>
-</blockquote>
-<ul>
-<li><p>大量的事件监听耗费性能</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 假设页面中有 10000 个 button 元素</span>
-<span class="token keyword">const</span> buttons <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'table button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> buttons<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 为 10000 个 button 元素添加了事件</span>
-  buttons<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 省略具体执行逻辑...</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
-<li><p>利用事件流的特征，可以对上述的代码进行优化，事件的的冒泡模式总是会将事件流向其父元素的，如果父元素监听了相同的事件类型，那么父元素的事件就会被触发并执行</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 假设页面中有 10000 个 button 元素</span>
-<span class="token keyword">let</span> buttons <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'table button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 假设上述的 10000 个 buttom 元素共同的祖先元素是 table</span>
-<span class="token keyword">let</span> parents <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'table'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-parents<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'点击任意子元素都会触发事件...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
-<ul>
-<li><p>同时为了保证只有目标元素执行对应函数，需要使用事件对象中的<code>target</code>
-或
-<code>srcElement</code>属性，这两个属性表示真正触发事件的元素，它是一个元素类型的节点。</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
-  <span class="token comment">// 假设页面中有 10000 个 button 元素</span>
-  <span class="token keyword">const</span> buttons <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'table button'</span><span class="token punctuation">)</span>
-  
-  <span class="token comment">// 假设上述的 10000 个 buttom 元素共同的祖先元素是 table</span>
-  <span class="token keyword">const</span> parents <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'table'</span><span class="token punctuation">)</span>
-  parents<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// console.log(ev.target);</span>
-    <span class="token comment">// 只有 button 元素才会真正去执行逻辑</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span>target<span class="token punctuation">.</span>tagName <span class="token operator">===</span> <span class="token string">'BUTTON'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token comment">// 执行的逻辑</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
-</ul></li>
-</ul>
-<h1 id="四其他事件类型">四、其他事件类型</h1>
-<h2 id="页面加载事件">1、页面加载事件</h2>
-<ul>
-<li><code>load</code>：监听页面所有资源加载完毕</li>
-</ul>
-<h2 id="元素滚动事件">2、元素滚动事件</h2>
-<ul>
-<li><code>scroll</code>：滚动条在滚动时持续触发的事件</li>
-</ul>
-<h2 id="页面尺寸事件">3、页面尺寸事件</h2>
-<ul>
-<li><code>resize</code>：窗口尺寸改变时触发的事件</li>
-</ul>
+                <h1 id="node.js疑难解决">Node.js疑难解决</h1>
+<h2 id="一npm安装模块报错">一、npm安装模块报错</h2>
+<h3 id="问题描述">1、问题描述：</h3>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm error code CERT_HAS_EXPIRED
+npm error errno CERT_HAS_EXPIRED
+npm error request to https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;yarn failed, reason: certificate has expired
+npm error A complete log of this run can be found in: D:\Software\Nodejs\node_cache\_logs\2025-01-16T06_54_38_642Z-debug-0.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>npm 的证书失效了，它不再支持自签名证书</p>
+<h3 id="解决方案">2、解决方案</h3>
+<h4 id="升级npm">（1）升级npm</h4>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm install -g npm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h4 id="清理缓存">（2）清理缓存</h4>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm cache clean --force<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h4 id="更换镜像源">（3）更换镜像源</h4>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org
+npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<h4 id="将https改成http">（4）将https改成http</h4>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set registry http:&#x2F;&#x2F;registry.npmjs.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h4 id="取消ssl验证该方法降低网络安全性慎用">（5）取消ssl验证(该方法降低网络安全性，慎用)</h4>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">npm config set strict-ssl false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
                 
               </div>
@@ -419,7 +324,7 @@ parents<span class="token punctuation">.</span><span class="token function">addE
     
       <span class="category-chain">
         
-  <a href="/categories/JavaScript%E4%B8%8EWeb-API/" class="category-chain-item">JavaScript与Web API</a>
+  <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="category-chain-item">问题解决</a>
   
   
 
@@ -431,6 +336,15 @@ parents<span class="token punctuation">.</span><span class="token function">addE
     </div>
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%96%91%E9%9A%BE%E8%A7%A3%E5%86%B3/" class="print-no-link">#疑难解决</a>
+      
+        <a href="/tags/Node-js/" class="print-no-link">#Node.js</a>
+      
+    </div>
+  
 </div>
 
 
@@ -439,8 +353,8 @@ parents<span class="token punctuation">.</span><span class="token function">addE
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>事件流</div>
-      <div>http://example.com/2025/01/17/JavaScript与WebAPI基础/事件流/</div>
+      <div>npm长时间下载包失败</div>
+      <div>http://example.com/2025/01/16/问题解决/问题解决/</div>
     </div>
     <div class="license-meta">
       
@@ -452,7 +366,7 @@ parents<span class="token punctuation">.</span><span class="token function">addE
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月17日</div>
+          <div>2025年1月16日</div>
         </div>
       
       
@@ -484,9 +398,9 @@ parents<span class="token punctuation">.</span><span class="token function">addE
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/18/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/BOM/" title="BOM">
+                      <a href="/2025/01/16/Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/Fluid%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" title="Fluid主题配置">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">BOM</span>
+                        <span class="hidden-mobile">Fluid主题配置</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -494,8 +408,8 @@ parents<span class="token punctuation">.</span><span class="token function">addE
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/17/JavaScript%E4%B8%8EWebAPI%E5%9F%BA%E7%A1%80/DOM/" title="DOM">
-                        <span class="hidden-mobile">DOM</span>
+                      <a href="/2025/01/16/Conda/Conda%E5%9F%BA%E7%A1%80-1/" title="Conda创建和使用环境">
+                        <span class="hidden-mobile">Conda创建和使用环境</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
