@@ -1,0 +1,903 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="无人知我意">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM">
+<meta property="og:url" content="http://example.com/2025/01/17/JavaScript/DOM/index.html">
+<meta property="og:site_name" content="我的世界">
+<meta property="og:description" content="什么是DOM DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML 文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript 等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM 的详细介绍： DOM 的结构  节点（Node）  元素节点（Element Node）：对应于 HTML">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/01/17/JavaScript/DOM/image-20250117214554142.png">
+<meta property="article:published_time" content="2025-01-17T13:27:52.000Z">
+<meta property="article:modified_time" content="2025-08-15T04:04:18.621Z">
+<meta property="article:author" content="无人知我意">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="DOM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/01/17/JavaScript/DOM/image-20250117214554142.png">
+  
+  
+  
+  <title>DOM - 我的世界</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/backgroundize.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>我的世界</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="DOM"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-17 21:27" pubdate>
+          2025年1月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">DOM</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="什么是dom">什么是DOM</h1>
+<p>DOM 是“Document Object Model（文档对象模型）”的缩写，它是 HTML 和 XML
+文档的编程接口，提供了对文档的结构化表示，并且可以使用诸如 JavaScript
+等编程语言来访问和操作文档中的元素、属性和事件等。以下是关于 DOM
+的详细介绍：</p>
+<h2 id="dom-的结构">DOM 的结构</h2>
+<ul>
+<li><p><strong>节点（Node）</strong></p>
+<ul>
+<li><strong>元素节点（Element Node）</strong>：对应于 HTML 或 XML
+文档中的元素，如 <code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>
+等。元素节点是 DOM
+树的主要组成部分，可以包含其他元素节点、文本节点等。</li>
+<li><strong>属性节点（Attribute Node）</strong>：定义了元素的属性，如
+<code>&lt;img src="image.jpg"&gt;</code> 中的 <code>src</code>
+就是一个属性节点。不过在 DOM
+中，属性通常被视为元素节点的一部分，而不是独立的节点。</li>
+<li><strong>文本节点（Text Node）</strong>：包含元素的文本内容。例如在
+<code>&lt;p&gt;Hello, world!&lt;/p&gt;</code> 中，“Hello, world!”
+就是一个文本节点。</li>
+<li><strong>注释节点（Comment Node）</strong>：对应于文档中的注释，如
+<code>&lt;!-- 这是一个注释 --&gt;</code>。</li>
+<li><strong>文档节点（Document Node）</strong>：是 DOM
+树的根节点，代表整个文档。在 JavaScript 中，可以通过
+<code>document</code> 对象来访问文档节点。</li>
+</ul></li>
+<li><p><strong>DOM 树（DOM Tree）</strong></p>
+<ul>
+<li><p>DOM
+将文档表示为一个倒立的树形结构，其中每个节点都是树的一个组成部分。文档节点是树的根节点，其他节点如元素节点、文本节点等通过父子、兄弟等关系相互连接。例如对于以下
+HTML 结构：</p>
+<p>HTML复制</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>欢迎<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>这是一个段落。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>其对应的 DOM 树大致如下：</p>
+<p>复制</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">document
+├── html
+│   ├── head
+│   │   └── title
+│   │       └── 文本节点（标题）
+│   └── body
+│       ├── h1
+│       │   └── 文本节点（欢迎）
+│       └── p
+│           └── 文本节点（这是一个段落。）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+</ul></li>
+</ul>
+<h2 id="dom-的操作">DOM 的操作</h2>
+<ul>
+<li><p><strong>访问元素</strong></p>
+<ul>
+<li><strong>通过 ID
+获取元素</strong>：<code>document.getElementById('elementId')</code>，返回具有指定
+ID 的元素。</li>
+<li><strong>通过类名获取元素</strong>：<code>document.getElementsByClassName('className')</code>，返回一个包含所有具有指定类名的元素的
+HTMLCollection 对象。</li>
+<li><strong>通过标签名获取元素</strong>：<code>document.getElementsByTagName('tagName')</code>，返回一个包含所有具有指定标签名的元素的
+HTMLCollection 对象。</li>
+<li><strong>通过选择器获取元素</strong>：<code>document.querySelector('.className')</code>
+或 <code>document.querySelector('#elementId')</code>
+等，返回文档中匹配指定选择器的第一个元素；<code>document.querySelectorAll('.className')</code>
+等，返回一个包含所有匹配指定选择器的元素的 NodeList 对象。</li>
+</ul></li>
+<li><p><strong>创建元素</strong></p>
+<ul>
+<li><code>document.createElement('tagName')</code>：创建一个指定标签名的新元素。</li>
+<li><code>document.createTextNode('text')</code>：创建一个包含指定文本的新文本节点。</li>
+</ul></li>
+<li><p><strong>插入元素</strong></p>
+<ul>
+<li><code>element.appendChild(child)</code>：将一个子元素添加到指定元素的末尾。</li>
+<li><code>element.insertBefore(newElement, referenceElement)</code>：将新元素插入到指定元素的
+referenceElement 子元素之前。</li>
+</ul></li>
+<li><p><strong>删除元素</strong></p>
+<ul>
+<li><code>element.removeChild(child)</code>：从指定元素中删除一个子元素。</li>
+</ul></li>
+<li><p><strong>修改元素</strong></p>
+<ul>
+<li><p>修改元素的属性：<code>element.setAttribute('attributeName', 'value')</code>。</p></li>
+<li><p>修改元素属性：<code>element.className = '其他CSS选择器'</code>，覆盖原有属性类名</p>
+<ul>
+<li>可以使用<code>classlist</code>操纵CSS
+<ul>
+<li><code>element.classlist.add('其他CSS选择器')</code>：追加</li>
+<li><code>element.classlist.remove('其他CSS选择器')</code>：删除</li>
+<li><code>element.classlist。toggle('其他CSS选择器')</code>：切换，如果有这个属性，就删除，反之，则添加</li>
+</ul></li>
+</ul></li>
+<li><p>修改元素的内容：<code>element.innerHTML = '新的内容'</code> 或
+<code>element.textContent = '新的内容'</code>。</p>
+<ul>
+<li><p><code>innerHTML</code> 属性用于获取或设置元素的 HTML
+内容，它会解析内容中的 HTML
+标签。当使用这个属性输出DOM对象的内容是，会将HTML标签也进行输出</p></li>
+<li><p>与<code>innerHTML</code>属性不同，<code>innerText</code>属性用于获取或设置元素的文本内容，它不会解析内容中的
+HTML 标签。</p>
+<p><img src="/2025/01/17/JavaScript/DOM/image-20250117214554142.png" srcset="/img/loading.gif" lazyload alt="image-20250117214554142" style="zoom:50%;"></p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>自定义属性</strong></p>
+<ul>
+<li><p>在HTML标签中使用”data-”作为开头，同时使用dataset获取自定义属性，获取到的是一个字典。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"IE=edge"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+   <span class="token operator">&lt;</span>div data<span class="token operator">-</span>id<span class="token operator">=</span><span class="token string">"1"</span><span class="token operator">></span> 自定义属性 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token comment">// 1. 获取元素</span>
+        <span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+        <span class="token comment">// 2. 获取自定义属性值</span>
+         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+      
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+</ul></li>
+<li><p><strong>事件处理</strong></p>
+<ul>
+<li><p><strong>添加事件监听器</strong>：<code>element.addEventListener(eventclass, function,yesOrno)</code>，为元素添加一个事件监听器，当指定事件发生时，执行回调函数。</p>
+<ul>
+<li><code>eventclass</code>：事件类型</li>
+<li><code>function</code>：要执行的函数</li>
+<li><code>yesOrno</code>：是否进行捕获，默认为true</li>
+</ul></li>
+<li><p><strong>移除事件监听器</strong>：<code>element.removeEventListener('eventName', function)</code>，移除元素上之前添加的事件监听器。</p></li>
+<li><p>事件类型</p>
+<ul>
+<li>鼠标事件
+<ul>
+<li><code>mouseenter</code>：鼠标是否移入该DOM对象</li>
+<li><code>mouseleave</code>：鼠标是否移出该DOM对象</li>
+<li><code>click</code>：鼠标单击</li>
+<li><code>dbclick</code>：鼠标双击</li>
+</ul></li>
+<li>键盘事件
+<ul>
+<li><code>keydown</code>：键盘按下</li>
+<li><code>keyup</code>：键盘抬起</li>
+</ul></li>
+<li>表单事件
+<ul>
+<li><code>input</code>：文本框输入</li>
+</ul></li>
+<li>焦点事件
+<ul>
+<li><code>focus</code>：获得焦点</li>
+<li><code>blur</code>：失去焦点</li>
+</ul></li>
+</ul></li>
+<li><p>任意事件类型被触发时与事件相关的信息会被以对象的形式记录下来，我们称这个对象为事件对象。事件回调函数的【第1个参数】即所谓的事件对象，通常习惯性的将这个对象命名为
+<code>event</code>、<code>ev</code> 、<code>ev</code> 。</p></li>
+<li><p>这个对象包含的属性</p>
+<ol type="1">
+<li><code>ev.type</code> 当前事件的类型</li>
+<li><code>ev.clientX/Y</code> 光标相对浏览器窗口的位置</li>
+<li><code>ev.offsetX/Y</code> 光标相于当前 DOM 元素的位置</li>
+</ol></li>
+</ul></li>
+</ul>
+<h2 id="dom-的应用">DOM 的应用</h2>
+<ul>
+<li><strong>页面交互</strong>：通过 DOM
+操作，可以实现各种页面交互效果，如点击按钮显示隐藏内容、输入框内容验证、拖拽元素等。</li>
+<li><strong>动态内容更新</strong>：根据用户操作或数据变化，动态地创建、修改或删除页面元素，从而更新页面内容，无需重新加载整个页面。</li>
+<li><strong>与 CSS 交互</strong>：可以使用 DOM
+来获取或修改元素的样式，实现动态的样式效果，如改变元素的颜色、大小、位置等。</li>
+<li><strong>数据可视化</strong>：结合数据和 DOM
+操作，可以生成各种图表、图形等数据可视化内容，为用户提供更直观的信息展示。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaScript/" class="print-no-link">#JavaScript</a>
+      
+        <a href="/tags/DOM/" class="print-no-link">#DOM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>DOM</div>
+      <div>http://example.com/2025/01/17/JavaScript/DOM/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>无人知我意</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/01/17/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/" title="事件流">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">事件流</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/01/17/JavaScript/%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/" title="输入和输出">
+                        <span class="hidden-mobile">输入和输出</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/star.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/containsWord.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><script src="/js/snow.js"></script><script src="/js/title.js"></script><!-- hexo injector body_end end --></body>
+</html>
