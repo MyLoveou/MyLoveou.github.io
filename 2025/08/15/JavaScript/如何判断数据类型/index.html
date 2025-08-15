@@ -19,15 +19,15 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="常用如何判断数据类型的方法 typeof typeof 运算符可以用来判断一个变量的数据类型。 缺陷： - 无法区分对象的具体类型（如数组、函数、正则表达式等） - 无法判断 null 和 undefined - 对 null 进行 typeof 运算，返回 &quot;object&quot; instanceof instanceof用于检测构造函数的prototype属性是否出现在某个对象的原型链上">
+    <meta name="description" content="常用如何判断数据类型的方法 typeof typeof 运算符可以用来判断一个变量的数据类型。 缺陷：  无法区分对象的具体类型（如数组、函数、正则表达式等） 无法判断 null 和 undefined  对 null 进行 typeof 运算，返回 &quot;object&quot;   instanceof instanceof用于检测构造函数的prototype属性是否出现在某个对象的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何判断数据类型">
 <meta property="og:url" content="http://example.com/2025/08/15/JavaScript/%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="常用如何判断数据类型的方法 typeof typeof 运算符可以用来判断一个变量的数据类型。 缺陷： - 无法区分对象的具体类型（如数组、函数、正则表达式等） - 无法判断 null 和 undefined - 对 null 进行 typeof 运算，返回 &quot;object&quot; instanceof instanceof用于检测构造函数的prototype属性是否出现在某个对象的原型链上">
+<meta property="og:description" content="常用如何判断数据类型的方法 typeof typeof 运算符可以用来判断一个变量的数据类型。 缺陷：  无法区分对象的具体类型（如数组、函数、正则表达式等） 无法判断 null 和 undefined  对 null 进行 typeof 运算，返回 &quot;object&quot;   instanceof instanceof用于检测构造函数的prototype属性是否出现在某个对象的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-15T03:30:07.000Z">
-<meta property="article:modified_time" content="2025-08-15T04:03:09.135Z">
+<meta property="article:modified_time" content="2025-08-15T08:21:49.287Z">
 <meta property="article:author" content="无人知我意">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="数据类型">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          262 字
+          261 字
         
       </span>
     
@@ -287,24 +287,34 @@
                 
                 <h1 id="常用如何判断数据类型的方法">常用如何判断数据类型的方法</h1>
 <h2 id="typeof">typeof</h2>
-<p>typeof 运算符可以用来判断一个变量的数据类型。 缺陷： -
-无法区分对象的具体类型（如数组、函数、正则表达式等） - 无法判断 null 和
-undefined - 对 null 进行 typeof 运算，返回 "object"</p>
+<p>typeof 运算符可以用来判断一个变量的数据类型。</p>
+<p>缺陷：</p>
+<ul>
+<li><p>无法区分对象的具体类型（如数组、函数、正则表达式等）</p></li>
+<li><p>无法判断 null 和 undefined</p>
+<ul>
+<li>对 null 进行 typeof 运算，返回 "object"</li>
+</ul></li>
+</ul>
 <h2 id="instanceof">instanceof</h2>
 <p>instanceof用于检测构造函数的prototype属性是否出现在某个对象的原型链上。
-缺陷： -
-只能用于对象，不能用于原始类型（如字符串、数字、布尔值，非包装对象） -
-只能检测对象是否是某个构造函数的实例，不能检测对象的类型是否是某个构造函数的实例</p>
+缺陷：</p>
+<ul>
+<li><p>只能用于对象，不能用于原始类型（如字符串、数字、布尔值，非包装对象）</p></li>
+<li><p>只能检测对象是否是某个构造函数的实例，不能检测对象的类型是否是某个构造函数的实例</p></li>
+</ul>
 <h2 id="object.prototype.tostring">Object.prototype.toString()</h2>
 <p>最可靠的类型判断方法，可以准确区分所有内置类型</p>
 <h1 id="针对数组的类型判断">针对数组的类型判断</h1>
-<h2 id="instanceof-1">instanceof</h2>
-<h2 id="array.isarray">Array.isArray()</h2>
-<h2 id="object.prototype.tostring-1">Object.prototype.toString()</h2>
-<h2 id="对象原型判断">对象原型判断</h2>
+<ul>
+<li><p>instanceof</p></li>
+<li><p>Array.isArray()</p></li>
+<li><p>Object.prototype.toString()</p></li>
+<li><p>对象原型判断</p>
 <ul>
 <li>arr.__proto__ **= Array.prototype</li>
 <li>Object.getPrototypeOf(arr) **= Array.prototype</li>
+</ul></li>
 </ul>
 <h1 id="参考链接">参考链接</h1>
 <ul>
