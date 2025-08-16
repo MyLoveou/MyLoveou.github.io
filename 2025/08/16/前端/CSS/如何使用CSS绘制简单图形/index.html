@@ -19,23 +19,28 @@
   <meta name="author" content="无人知我意">
   <meta name="keywords" content="">
   
-    <meta name="description" content="什么是跨域问题 浏览器为了避免恶意文档通过脚本获取另一个文档的控制权，保护用户的敏感信息，防止不同源之间的请求以及保护服务器上的资源不被随意访问，而阻止不同源之间的通信。这就是所谓的跨域问题。 所谓“源”，其实就是协议、域名和端口号的组合。比如，https:&#x2F;&#x2F;www.example.com:8080 就是一个源。 所谓“域”，其实就是顶级域名。比如，www.example.com 就是一">
+    <meta name="description" content="如何使用CSS绘制一个三角形，是前端面试中经常被问道的问题。  使用CSS边框实现三角形 将CSS中通过设置元素的宽高为0，然后设置其上下左右四个边不同的边框，将不需要的边框颜色设置为透明，将可以保留一个可见的三角形边框。 .triangle-up &#123;   width: 0;   height: 0;   border-left: 20px solid transparent">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域问题">
-<meta property="og:url" content="http://example.com/2025/08/15/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="如何使用CSS绘制简单图形">
+<meta property="og:url" content="http://example.com/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/index.html">
 <meta property="og:site_name" content="我的世界">
-<meta property="og:description" content="什么是跨域问题 浏览器为了避免恶意文档通过脚本获取另一个文档的控制权，保护用户的敏感信息，防止不同源之间的请求以及保护服务器上的资源不被随意访问，而阻止不同源之间的通信。这就是所谓的跨域问题。 所谓“源”，其实就是协议、域名和端口号的组合。比如，https:&#x2F;&#x2F;www.example.com:8080 就是一个源。 所谓“域”，其实就是顶级域名。比如，www.example.com 就是一">
+<meta property="og:description" content="如何使用CSS绘制一个三角形，是前端面试中经常被问道的问题。  使用CSS边框实现三角形 将CSS中通过设置元素的宽高为0，然后设置其上下左右四个边不同的边框，将不需要的边框颜色设置为透明，将可以保留一个可见的三角形边框。 .triangle-up &#123;   width: 0;   height: 0;   border-left: 20px solid transparent">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-15T06:12:54.000Z">
-<meta property="article:modified_time" content="2025-08-15T08:23:05.072Z">
+<meta property="og:image" content="http://example.com/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/%E4%B8%89%E8%A7%92%E5%BD%A2.png">
+<meta property="og:image" content="http://example.com/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/%E7%9F%A9%E5%BD%A2.png">
+<meta property="og:image" content="http://example.com/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/%E5%9C%86%E5%BD%A2.png">
+<meta property="article:published_time" content="2025-08-16T03:16:47.000Z">
+<meta property="article:modified_time" content="2025-08-16T03:52:18.103Z">
 <meta property="article:author" content="无人知我意">
-<meta property="article:tag" content="浏览器">
-<meta property="article:tag" content="跨域">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/%E4%B8%89%E8%A7%92%E5%BD%A2.png">
   
   
   
-  <title>跨域问题 - 我的世界</title>
+  <title>如何使用CSS绘制简单图形 - 我的世界</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="跨域问题"></span>
+            <span id="subtitle" data-typed-text="如何使用CSS绘制简单图形"></span>
           
         </div>
 
@@ -220,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-15 14:12" pubdate>
-          2025年8月15日 下午
+        <time datetime="2025-08-16 11:16" pubdate>
+          2025年8月16日 上午
         </time>
       </span>
     
@@ -232,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          434 字
+          237 字
         
       </span>
     
@@ -243,7 +248,7 @@
         
         
         
-          4 分钟
+          2 分钟
         
       </span>
     
@@ -280,30 +285,53 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">跨域问题</h1>
+            <h1 id="seo-header">如何使用CSS绘制简单图形</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="什么是跨域问题">什么是跨域问题</h2>
-<p>浏览器为了避免恶意文档通过脚本获取另一个文档的控制权，保护用户的敏感信息，防止不同源之间的请求以及保护服务器上的资源不被随意访问，而阻止不同源之间的通信。这就是所谓的跨域问题。</p>
-<p>所谓“源”，其实就是协议、域名和端口号的组合。比如，https://www.example.com:8080
-就是一个源。</p>
-<p>所谓“域”，其实就是顶级域名。比如，www.example.com 就是一个域。</p>
-<p>所谓“跨域”：javascript脚本从一个源（域名）向另一个源（域名）发起请求。</p>
-<p>浏览器阻止不同源之间的通信的机制就是浏览器同源策略。</p>
-<p>总的来说，浏览器的跨域问题是由于其同源策略导致的。 ##
-如何解决跨域问题</p>
-<h3 id="cors跨域资源共享">CORS（跨域资源共享）</h3>
-<p>通过服务器设置特定的 HTTP
-响应头来允许来自不同源的请求。例如，服务器可以设置
-Access-Control-Allow-Origin 响应头来指定哪些源可以访问资源。</p>
-<h3 id="jsonp">JSONP</h3>
-<p>利用 <code>&lt;script&gt;</code>
-标签没有跨域限制的特性来实现跨域数据请求的方法。它通常用于获取 JSON
-数据，但存在一定的安全风险，且只能用于 GET 请求。</p>
-<h3 id="代理服务器">代理服务器</h3>
-<p>在客户端和目标服务器之间设置一个代理服务器，客户端将请求发送到代理服务器，代理服务器再将请求转发到目标服务器，并将响应返回给客户端。这样，客户端实际上只与代理服务器进行通信，避免了直接的跨域请求。</p>
+                <blockquote>
+<p>如何使用CSS绘制一个三角形，是前端面试中经常被问道的问题。</p>
+</blockquote>
+<h2 id="使用css边框实现三角形">使用CSS边框实现三角形</h2>
+<p>将CSS中通过设置元素的宽高为0，然后设置其上下左右四个边不同的边框，将不需要的边框颜色设置为透明，将可以保留一个可见的三角形边框。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">.triangle-up &#123;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent; &#x2F;*左边框透明*&#x2F;
+  border-right: 20px solid transparent; &#x2F;*右边框透明*&#x2F; 
+  border-bottom: 40px solid #000; &#x2F;*底边框为黑色，形成一个向上三角形*&#x2F; 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>效果如下：</p>
+<figure>
+<img src="/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/三角形.png" srcset="/img/loading.gif" lazyload alt="三角形">
+<figcaption aria-hidden="true">三角形</figcaption>
+</figure>
+<h2 id="使用css盒子实现矩形">使用CSS盒子实现矩形</h2>
+<p>设置元素的宽高并填充背景颜色</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">.rectangle &#123;
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>效果如下：</p>
+<figure>
+<img src="/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/矩形.png" srcset="/img/loading.gif" lazyload alt="矩形">
+<figcaption aria-hidden="true">矩形</figcaption>
+</figure>
+<h2 id="使用圆角实现圆形">使用圆角实现圆形</h2>
+<p>设置元素的宽高并设置圆角占比50%</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">.circle &#123;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff9a9e, #fad0c4)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<p>效果如下：</p>
+<figure>
+<img src="/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/圆形.png" srcset="/img/loading.gif" lazyload alt="圆形">
+<figcaption aria-hidden="true">圆形</figcaption>
+</figure>
 
                 
               </div>
@@ -337,9 +365,11 @@ Access-Control-Allow-Origin 响应头来指定哪些源可以访问资源。</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" class="print-no-link">#浏览器</a>
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
       
-        <a href="/tags/%E8%B7%A8%E5%9F%9F/" class="print-no-link">#跨域</a>
+        <a href="/tags/CSS/" class="print-no-link">#CSS</a>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/" class="print-no-link">#面试</a>
       
     </div>
   
@@ -351,8 +381,8 @@ Access-Control-Allow-Origin 响应头来指定哪些源可以访问资源。</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>跨域问题</div>
-      <div>http://example.com/2025/08/15/前端/浏览器/跨域问题/</div>
+      <div>如何使用CSS绘制简单图形</div>
+      <div>http://example.com/2025/08/16/前端/CSS/如何使用CSS绘制简单图形/</div>
     </div>
     <div class="license-meta">
       
@@ -364,7 +394,7 @@ Access-Control-Allow-Origin 响应头来指定哪些源可以访问资源。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年8月15日</div>
+          <div>2025年8月16日</div>
         </div>
       
       
@@ -396,18 +426,12 @@ Access-Control-Allow-Origin 响应头来指定哪些源可以访问资源。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/16/%E5%89%8D%E7%AB%AF/CSS/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2/" title="如何使用CSS绘制简单图形">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">如何使用CSS绘制简单图形</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/08/15/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E5%85%A8%E6%B5%81%E7%A8%8B/" title="浏览器页面渲染全流程">
-                        <span class="hidden-mobile">浏览器页面渲染全流程</span>
+                      <a href="/2025/08/15/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title="跨域问题">
+                        <span class="hidden-mobile">跨域问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
